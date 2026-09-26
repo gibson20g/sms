@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil do Estabelecimento - Guia Local</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#80d5cb",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed": "#cce5ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "tertiary-container": "#945d00",
+            "on-secondary-fixed-variant": "#004b73",
+            "on-surface-variant": "#3e4947",
+            "on-background": "#131b2e",
+            "on-primary-fixed-variant": "#00504a",
+            "tertiary": "#734700",
+            "background": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-container-high": "#e2e7ff",
+            "surface-container": "#eaedff",
+            "outline": "#6e7977",
+            "secondary": "#006398",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#001d31",
+            "on-error": "#ffffff",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#00201d",
+            "primary": "#005c55",
+            "inverse-surface": "#283044",
+            "surface-bright": "#faf8ff",
+            "on-secondary-container": "#00476e",
+            "surface": "#faf8ff",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-container": "#a3faef",
+            "primary-fixed-dim": "#80d5cb",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a",
+            "primary-container": "#0f766e",
+            "error": "#ba1a1a",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-container": "#ffe6cc",
+            "secondary-fixed-dim": "#93ccff",
+            "primary-fixed": "#9cf2e8",
+            "surface-container-highest": "#dae2fd",
+            "outline-variant": "#bdc9c6",
+            "on-primary": "#ffffff",
+            "surface-tint": "#006a63",
+            "secondary-container": "#5bb8fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-24">
+<!-- Main Mobile App Shell Max Container -->
+<div class="max-w-md mx-auto min-h-screen relative bg-surface shadow-sm">
+<!-- Top App Bar (Task Sub-Screen Context with Return Navigation) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-margin h-14">
+<!-- Back Navigation Trigger -->
+<button aria-label="Voltar" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container active:scale-95 transition-all text-on-surface" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Centered Profile Identity Header -->
+<div class="flex items-center gap-1.5 truncate max-w-[200px]">
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Churrasquinho Gaúcho</h1>
+<span class="material-symbols-outlined text-secondary text-base flex-shrink-0" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<!-- Trailing Actions (Favorite and Share) -->
+<div class="flex items-center gap-1">
+<button aria-label="Favoritar estabelecimento" class="flex items-center justify-center w-9 h-9 rounded-full hover:bg-surface-container active:scale-95 transition-all text-on-surface-variant" type="button">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button aria-label="Compartilhar estabelecimento" class="flex items-center justify-center w-9 h-9 rounded-full hover:bg-surface-container active:scale-95 transition-all text-on-surface-variant" type="button">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-margin space-y-5 pt-3">
+<!-- Hero Visual Section with Status Overlays -->
+<section class="relative rounded-xl overflow-hidden shadow-sm border border-outline-variant/30">
+<div class="relative w-full h-56 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A warm and inviting outdoor terrace of a lively artisanal barbecue restaurant in the golden evening light. Wooden rustic tables and ambient hanging warm fairy bulbs light up patrons dining peacefully. The clean modern atmosphere emphasizes deep teal and earthy terracotta shades in high contrast clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgbEVy0tqlK_BQit1BXsnt7jfN79Cnvc6Am8ehQ4M7YdzfUyDAeE5yRqPzfx6l-zrUjqJdg9wUwSnP70TfAudlpyr_OMTBwfoMuQ_I5bAp10d-ENVEBPliJBKDy2Zdy4YHEFZDKH2UpnCKqv5wVb-GCbBVGbcrGolfXTJQC53oSZXuqLTg489kPBWGsbC7XpUg9aH78LuJfMzVp1IvcezBP9n3COaPeMzo27G8QxT5p3Pd3xJQJeeu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<!-- Top Distance and Category Badges -->
+<div class="absolute top-3 left-3 right-3 flex justify-between items-center">
+<div class="flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="near_me" data-weight="fill" style="font-variation-settings: 'FILL' 1;">near_me</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">350m de você</span>
+</div>
+<div class="bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Gastronomia Gaúcha</span>
+</div>
+</div>
+<!-- Bottom Live Status Indicator -->
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-container"></span>
+</span>
+<div>
+<span class="font-label-md text-label-md text-surface-container-lowest font-bold">Aberto agora</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface opacity-90 block">Fecha às 23:30</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-on-surface/40 backdrop-blur-sm px-2.5 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-surface-container-lowest">Brasa Ativa</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Reputation Micro-Section -->
+<section class="flex items-center justify-between bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4.9</span>
+<span class="font-label-md text-label-md text-on-surface-variant">(88 avaliações)</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="verified_user">verified_user</span>
+              Comprovado pela comunidade local
+            </p>
+</div>
+</div>
+<button class="text-secondary font-label-md text-label-md hover:underline flex items-center" type="button">
+          Ver todas
+          <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</section>
+<!-- Primary Action Callouts (Send Message & Directions) -->
+<section class="grid grid-cols-2 gap-3">
+<!-- Direct Message Action -->
+<button class="flex items-center justify-center gap-2 bg-primary-container text-on-primary font-label-lg text-label-lg py-3.5 px-3 rounded-xl shadow-md active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="chat">chat</span>
+<span>Enviar Mensagem</span>
+</button>
+<!-- Route Calculation Action -->
+<button class="flex items-center justify-center gap-2 bg-surface-container-lowest text-secondary border border-outline-variant/40 font-label-lg text-label-lg py-3.5 px-3 rounded-xl shadow-sm hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-xl text-secondary" data-icon="directions">directions</span>
+<span>Traçar Rota</span>
+</button>
+</section>
+<!-- Pinned Daily Status Updates -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="push_pin" data-weight="fill" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Status Fixados do Estabelecimento</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hoje</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- Status 1 -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-sm" data-icon="skillet">skillet</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">Cozinha</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight font-semibold">Picanha fresca na brasa hoje</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">11:30</span>
+</div>
+<!-- Status 2 -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center gap-1 text-secondary mb-1">
+<span class="material-symbols-outlined text-sm" data-icon="music_note">music_note</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">Música</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight font-semibold">Música ao vivo às 20h</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Acústico</span>
+</div>
+<!-- Status 3 -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center gap-1 text-tertiary mb-1">
+<span class="material-symbols-outlined text-sm" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">Pagamento</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight font-semibold">Aceitamos Pix e Cartão</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Sem taxas</span>
+</div>
+</div>
+</section>
+<!-- Key Schedule & Contact Info Bento Card -->
+<section class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 space-y-4">
+<!-- Opening Hours Detailed Breakdown -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Horário de Funcionamento</h3>
+</div>
+<span class="font-label-md text-label-md bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">Hoje Aberto</span>
+</div>
+<!-- Highlight of Current Day -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between border-l-4 border-primary">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-bold block">Quinta-feira (Hoje)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Almoço e Jantar</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-primary font-bold block">11:30 – 15:00</span>
+<span class="font-label-md text-label-md text-primary font-bold block">18:00 – 23:30</span>
+</div>
+</div>
+<!-- Weekly Schedule Collapsed/Quick Look -->
+<div class="mt-2 text-on-surface-variant font-body-sm text-body-sm space-y-1 pt-1">
+<div class="flex justify-between py-0.5">
+<span>Segunda-feira</span>
+<span class="text-outline">Fechado</span>
+</div>
+<div class="flex justify-between py-0.5">
+<span>Terça a Sexta</span>
+<span class="text-on-surface">11:30 – 15:00 • 18:00 – 23:30</span>
+</div>
+<div class="flex justify-between py-0.5">
+<span>Sábado e Domingo</span>
+<span class="text-on-surface">12:00 – 00:00 (Direto)</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 pt-3 space-y-2.5">
+<!-- Physical Address with Reference Point -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5 flex-shrink-0" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Rua dos Andradas, 1420 - Centro Histórico</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ponto de referência: Em frente à Praça da Matriz, ao lado do Café Colonial.</p>
+</div>
+</div>
+<!-- Contact / Direct WhatsApp -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary flex-shrink-0" data-icon="call">call</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">(51) 98765-4321</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Atendimento telefônico e WhatsApp</p>
+</div>
+</div>
+<button class="bg-surface-container px-3 py-1.5 rounded-lg text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+              Copiar
+            </button>
+</div>
+</div>
+</section>
+<!-- Local Showcase Publications Section (Mandatory 3 Curated Photos) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="photo_library">photo_library</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Publicações do Local</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 registros</span>
+</div>
+<!-- Bento Photo Trio Grid -->
+<div class="grid grid-cols-12 gap-3">
+<!-- Publication 1: Ambience & Physical Venue (Large Feature) -->
+<div class="col-span-12 rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-sm">
+<div class="relative h-44 w-full">
+<img class="w-full h-full object-cover" data-alt="A clean and brightly lit dining hall of an authentic southern Brazilian barbecue bistro with polished dark timber tables and cozy seating. The interior features exposed brick walls adorned with vintage culinary tools and warm ambient lighting. The atmosphere is tidy, organized, and welcomes community dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1575rg8SdGuY0tknj4IXjuUsS6NAi239zbW-5qkUp6o3njEEQuxOPAzrQLBfhotpGw3k47Iq9nC6JDu27qRvhrozPF7eFYrT_O3fIhQRPO_nxgeS1FML0bhDmXlNkuf6YeXWBF1xEQNAcVWioobAZ0f9nFR4HXIctbzLfMy03wQ0h1GAsIM-AflYMX1VLvvaADNhZm6ILsmVIXCjTwvN60Hh1n6E1ZbL_Ww9MKDp-9-9kb9krZO2A"/>
+<div class="absolute top-2.5 left-2.5 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="storefront">storefront</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">O Ambiente</span>
+</div>
+</div>
+<div class="p-3">
+<p class="font-body-sm text-body-sm text-on-surface">Salão climatizado com mesas ao ar livre preparadas para receber você e sua família com conforto total.</p>
+<div class="flex items-center justify-between text-outline text-xs mt-2">
+<span class="font-label-sm text-label-sm">Postado há 2 dias</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm"><span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span> 42</span>
+</div>
+</div>
+</div>
+<!-- Publication 2: Signature Cuts / Food Products -->
+<div class="col-span-6 rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div class="relative h-36 w-full">
+<img class="w-full h-full object-cover" data-alt="Close up photography of premium beef picanha skewers sizzling over red hot glowing charcoal embers. Visible savory juices, coarse sea salt crystals glistening under focused restaurant spotlighting, with aromatic herbs on the side. Rich warm colors accentuate the juicy texture and mouthwatering culinary mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD653IVHDx_OISKO4Hd8Qq8gGoQRFpNw7UQ0Aok7ssmNqpt80Zfft03BNKEGyKCOwV2cvbtsFCmXxc1yvuuu_Z56dJf3tVh12CdUN6ZEO9pJlsIwi3OQDK0PivYQT6RdlcLdvLam-3QfUczZbcwuXWAybxkY8_Ae6QeQmvjjkZex3MzISN8P4lg1oGmNU2lczLzSB5ZEv5Uv3j3U6mDHdj84rIy8zfuOdlhUfFOYRYCzcZU5sb4ivHo"/>
+<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Pratos</span>
+</div>
+</div>
+<div class="p-2.5 flex-1 flex flex-col justify-between">
+<p class="font-body-sm text-body-sm text-on-surface font-semibold leading-snug">Espeto de Picanha Nobre com Farofa Artesanal</p>
+<span class="font-label-sm text-label-sm text-outline mt-2">Ontem</span>
+</div>
+</div>
+<!-- Publication 3: Backstage & Welcoming Staff Service -->
+<div class="col-span-6 rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div class="relative h-36 w-full">
+<img class="w-full h-full object-cover" data-alt="A smiling culinary pitmaster in a clean black apron and chef hat carefully slicing grilled steak on a wooden cutting board with sharp knives. Behind the warm counter, friendly service staff prepare welcoming drinks in a spotless modern open-kitchen environment filled with natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTporgKxzHnofq9Z4B-R88wRLClB5WXAGLwt2WJ1kcXAd2DFUi3VtT8rPl4o-m6rlJoI8-j1K9IokGK_qgtYjOLlyOinSvAnQgGyLWRLM0nGa9wFK7cMJJLImc7HMjzsORu2ECl43mrIljOMu-a24FMw6z68sdb5LMUEgxMs7HpWi4HLAXvyu3cZyk8e0oVNCtEVedweJpZjdQa_9O5UmmTQxII5sFcj5w0Lr6yTrh_YlLbWA4nRk-"/>
+<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="groups">groups</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Bastidores</span>
+</div>
+</div>
+<div class="p-2.5 flex-1 flex flex-col justify-between">
+<p class="font-body-sm text-body-sm text-on-surface font-semibold leading-snug">Nossa equipe a postos para o melhor atendimento</p>
+<span class="font-label-sm text-label-sm text-outline mt-2">Hoje às 10h</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Endorsement Card -->
+<section class="bg-surface-container-high/60 p-3.5 rounded-xl border border-outline-variant/20 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="thumb_up">thumb_up</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface font-bold">Recomendado por 94% dos vizinhos</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Destaque por rapidez no preparo e ambiente familiar aconchegante.</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Guia Local Tab Active per Source of Truth Blueprint) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-md mx-auto bg-surface-container-lowest/90 backdrop-blur-md shadow-md border-t border-outline-variant/30">
+<!-- Conversas -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="chat">chat</span>
+<span class="font-label-sm text-label-sm">Conversas</span>
+</a>
+<!-- Status -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="motion_photos_on">motion_photos_on</span>
+<span class="font-label-sm text-label-sm">Status</span>
+</a>
+<!-- Guia Local (ACTIVE TAB MATCHING CURRENT PROFILE VIEW) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm">Guia Local</span>
+</a>
+<!-- Ajustes -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Ajustes</span>
+</a>
+</nav>
+</div>
+</body></html>

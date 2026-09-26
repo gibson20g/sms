@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Café Bistrô &amp; Confeitaria - Conversas Comerciais</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed": "#00201d",
+            "secondary": "#006398",
+            "surface-bright": "#faf8ff",
+            "primary": "#005c55",
+            "on-tertiary-container": "#ffe6cc",
+            "surface-tint": "#006a63",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004b73",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-dim": "#d2d9f4",
+            "on-background": "#131b2e",
+            "on-secondary-fixed": "#001d31",
+            "primary-fixed-dim": "#80d5cb",
+            "surface-container-high": "#e2e7ff",
+            "tertiary": "#734700",
+            "on-tertiary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#93ccff",
+            "inverse-on-surface": "#eef0ff",
+            "on-error-container": "#93000a",
+            "secondary-container": "#5bb8fe",
+            "on-secondary-container": "#00476e",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#00504a",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "background": "#faf8ff",
+            "surface": "#faf8ff",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#3e4947",
+            "tertiary-fixed": "#ffddb8",
+            "on-surface": "#131b2e",
+            "inverse-primary": "#80d5cb",
+            "outline-variant": "#bdc9c6",
+            "on-primary-container": "#a3faef",
+            "tertiary-container": "#945d00",
+            "surface-container": "#eaedff",
+            "secondary-fixed": "#cce5ff",
+            "primary-fixed": "#9cf2e8",
+            "on-error": "#ffffff",
+            "primary-container": "#0f766e",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6e7977",
+            "tertiary-fixed-dim": "#ffb95f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+            "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "18px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbar for category tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen pb-24">
+<!-- Container Mobile Centralizado (390px base standard) -->
+<div class="max-w-md mx-auto min-h-screen flex flex-col bg-background relative shadow-2xl">
+<!-- TopAppBar Compartilhado & Estilizado com Identidade Comercial -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin h-14 max-w-md mx-auto">
+<button class="flex items-center justify-center p-2 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors duration-150 active:scale-95 transition-transform" title="Alternar Perfil">
+<span class="material-symbols-outlined text-primary" data-icon="switch_account">switch_account</span>
+</button>
+<!-- Brand / Headline com destaque esmeralda de comércio ativo -->
+<div class="flex items-center space-x-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Mensagens</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary font-semibold">
+            Bistrô
+          </span>
+</div>
+<button class="flex items-center justify-center p-2 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors duration-150 active:scale-95 transition-transform" title="Ver no Mapa">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</button>
+</div>
+<!-- Perfil da Loja Ativa com Switcher de Status e Ações Rápidas -->
+<div class="px-margin pb-space-sm pt-1 bg-surface-container-lowest">
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="relative">
+<img class="w-12 h-12 rounded-xl object-cover border-2 border-primary-container" data-alt="A modern artisanal cafe and pastry shop entrance with warm glowing tungsten pendant lighting, emerald green tiled counters, rustic wooden shelves showcasing sourdough bread and croissants, with a clean contemporary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqyIpxOzY0eLtR-zKGAQFeuF8s0CSoWZmp6WWft07J2bgrShA5V1LBm9AOXFn5nqFnrmMBxkGJwcIBCqzKvVIGllqT9YniI2UorIWW9VIJRV_IB1CAE_G2bqbizENFGt4X-5ikuIHjUW2eOKjcZZDssdKmO9zh46AYbhj5mss6tlfmR80QaRUM7WtebjaPKpe8Dvt-IlOOKdkZfNTyIItrQGstTlvh0qgXW8nVaeNJcMtv3nz8sCvK"/>
+<span class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary rounded-full p-0.5 flex items-center justify-center" title="Empresa Verificada">
+<span class="material-symbols-outlined text-[14px] fill-1" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h1 class="font-label-lg text-label-lg text-on-surface font-bold truncate max-w-[140px]">Café Bistrô &amp; Conf.</h1>
+</div>
+<!-- Badge LOJA ABERTA com micro switcher -->
+<div class="flex items-center mt-1 space-x-1.5">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-primary-fixed text-on-primary-fixed-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1 animate-pulse"></span>
+                  LOJA ABERTA
+                </span>
+<span class="text-label-sm font-label-sm text-outline">Até 18:30</span>
+</div>
+</div>
+</div>
+<!-- Botão Switcher Rápido: Pausar ou Mudar Modo -->
+<div class="flex flex-col items-end space-y-1">
+<button class="flex items-center space-x-1 px-2.5 py-1 bg-surface-container-lowest hover:bg-surface-variant text-on-surface-variant rounded-lg border border-outline-variant/50 text-label-sm font-label-sm transition-all duration-150 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="pause_circle">pause_circle</span>
+<span>Pausar</span>
+</button>
+<span class="text-[10px] text-outline">Modo Empresa</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Barra de Métricas Rápidas do Dia (Estilo Bento Grid Compacto) -->
+<section class="px-margin mt-3">
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest p-2.5 rounded-xl border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px] font-bold bg-primary/10 text-primary px-1 rounded">Hoje</span>
+</div>
+<div class="mt-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">12</span>
+<p class="font-label-sm text-label-sm text-outline leading-tight">pedidos hoje</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-xl border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between text-tertiary">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending_actions">pending_actions</span>
+<span class="text-[10px] font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant px-1 rounded">Ação</span>
+</div>
+<div class="mt-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">3</span>
+<p class="font-label-sm text-label-sm text-outline leading-tight">orçamentos pendentes</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-xl border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed-variant px-1 rounded">Expediente</span>
+</div>
+<div class="mt-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">18:30</span>
+<p class="font-label-sm text-label-sm text-outline leading-tight">Horário: até 18:30</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Campo de Busca Interna do Comércio -->
+<div class="px-margin mt-3">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant/40 rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary placeholder:text-outline transition-colors duration-150" placeholder="Buscar conversas, pedidos ou clientes..." type="text"/>
+</div>
+</div>
+<!-- Filtros de Negócio em Carrossel Horizontal -->
+<section class="mt-3">
+<div class="flex items-center space-x-2 px-margin overflow-x-auto no-scrollbar py-1">
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm flex items-center space-x-1.5">
+<span>Todas</span>
+<span class="bg-on-primary text-primary px-1.5 py-0.2 rounded-full text-[10px] font-bold">18</span>
+</button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container transition-colors">
+<span>Novos Clientes</span>
+</button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container transition-colors flex items-center space-x-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Em Aberto/Orçamentos</span>
+</button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container transition-colors">
+<span>Prontos p/ Retirada</span>
+</button>
+<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container transition-colors">
+<span>Fornecedores</span>
+</button>
+</div>
+</section>
+<!-- Lista de Conversas Voltadas 100% ao Comércio -->
+<main class="flex-1 px-margin mt-3 space-y-2.5">
+<!-- Item 1: Pedido #4092 pronto para entrega com botão Enviar Pix / Confirmar -->
+<article class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/40 hover:border-primary/40 transition-all duration-150 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 items-center">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Close up photograph of an elegant customer sipping artisanal cappuccino at a bright sunlit cafe table, dressed in a minimal dark coat with neutral tones and soft morning bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1S_V5a0vI5rBjuxnxM2Prhbjvsig4r3sAOplUEX90KZSRSy6HYz_NWH9PQsUea3jwz2NYyhk1iFEJuIUEDQQz-bL0zsG48YxHHrqZOt05VvdmpSrugiROySyc20pJJgexPejhxhVSWQ2XQT-3898wB2I0IwWyfL7yL6MxHsZdRzVXuKCfuqmjfBkofbJc3kiPg-vEqdQ9xrRt0TGby9GZ1E0npTU1weGuNQ4kYLoSc8J8bIUWMCaR"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary-container text-on-primary rounded-full flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[11px]" data-icon="takeout_dining">takeout_dining</span>
+</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Mariana Souza</h2>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-primary font-bold">#4092</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 font-medium">Pedido #4092 pronto para entrega</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">11:42</span>
+</div>
+<!-- Ação Rápida Integrada (Micro CTA) -->
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center space-x-1 text-primary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="check_circle">check_circle</span>
+<span>Box Salgados + Torta Alemã</span>
+</div>
+<div class="flex space-x-2">
+<button class="px-2.5 py-1 bg-surface-container-low hover:bg-surface-variant text-on-surface-variant text-label-sm font-label-sm font-semibold rounded-lg border border-outline-variant/50 transition-transform active:scale-95">
+              Confirmar
+            </button>
+<button class="px-3 py-1 bg-primary hover:bg-primary-container text-on-primary text-label-sm font-label-sm font-bold rounded-lg transition-transform active:scale-95 shadow-sm flex items-center space-x-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="payments">payments</span>
+<span>Enviar Pix</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 2: Cliente solicitando cardápio de bolos de aniversário com badge 'Orçamento' -->
+<article class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/40 hover:border-primary/40 transition-all duration-150 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 items-center">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a smiling young woman holding her phone in a modern minimalist bakery setting with clean white walls and pastry cases in background, natural flattering daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAw3qcYBcKOwYGrsHvqhJgbWd38JxMc9_496S6KwXzAyrWeOW1l0zVeJwbehwmup6f0pRK1r5nAnGYWClKrVFEa2YPyVxf-fIMN5D5yBZyyvi3bzVmpTHtXP5dyt0F9Ka0Rbzg3zwqwg0YgR4orpfbvIVqIw3O7GJ8QZAURnN7SimIjMjx34g_6CyXk1NUysYqa59pe5ptzyhqflnjArEfred8FKkZ0tXg2eGrgNkh1iF1ik678hVr"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-fixed text-on-tertiary-fixed rounded-full flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[11px]" data-icon="cake">cake</span>
+</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Carla Peixoto</h2>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold">Orçamento</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">Olá! Vocês teriam o cardápio de bolos de aniversário para 20 pessoas?</p>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-1">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">10:15</span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Aguardando resposta do bistrô</span>
+<button class="px-2.5 py-1 text-primary bg-primary-fixed/30 hover:bg-primary-fixed rounded-lg text-label-sm font-label-sm font-bold flex items-center space-x-1 transition-all">
+<span class="material-symbols-outlined text-[14px]" data-icon="menu_book">menu_book</span>
+<span>Enviar Catálogo</span>
+</button>
+</div>
+</article>
+<!-- Item 3: Fornecedor de grãos de café com comprovante enviado -->
+<article class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/40 hover:border-primary/40 transition-all duration-150 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 items-center">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Commercial specialty coffee roaster warehouse setting with burlap bags of green coffee beans and a craftsman inspector reviewing roast quality under warm vintage industrial lamps." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0f6Lo7bg65k0_Xn1yrVIwAsBwPzyCOaIb6o3W5K5OD3MgYRUs3hQrpbQZuYhf8et3H2q8WrWUyTiSHm3VF1WHIslageGOkekeRSyMzu31aN9VMmr9AcB48m7PKkTsTA8Na_oElQcoGnzkvET78HllogXsfoUG4XorBDp5X6Q2uoBRxauqjCMPo2--M7Z6o8zH7QMIwV-xENCYmfsCQ7D2mHzuN5ro-Yi6W6etPyrPp8deIfV35kIK"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-outline text-surface rounded-full flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[11px]" data-icon="local_shipping">local_shipping</span>
+</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Grãos da Serra Distribuidora</h2>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-medium">Fornecedor</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="attach_file">attach_file</span>
+<span>Comprovante de envio do lote #9822.pdf</span>
+</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Ontem</span>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Entrega prevista: Amanhã às 09:00</span>
+<button class="px-2.5 py-1 text-on-surface-variant hover:bg-surface-container-high rounded-lg text-label-sm font-label-sm font-semibold transition-all">
+            Ver Comprovante
+          </button>
+</div>
+</article>
+<!-- Item 4: Novo cliente vindo do Guia Local com badge 'Origem: Guia Local' -->
+<article class="bg-surface-container-lowest p-3.5 rounded-xl border border-outline-variant/40 hover:border-primary/40 transition-all duration-150 shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex space-x-3 items-center">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Friendly urban professional looking at smartphone on a city street corner near a tree lined cafe promenade during a clear golden hour afternoon, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqeF1Ash0Rhywbq1Ttp-CU_YxcHzfTr_rhwWJdVdvHlsJ42g70HWVfMVFV3T32tNFy3Hk8Wn0HnQcoSwqacgdrx1vBiB23J4HXCJazp26-azbnPJCD52nfk22v-i7jK1QvKDzw963WJ2hUq70x-f85BlYViXKrdvnJ0YgcpGSeWykmtRP6favXLmLIQg4UnHcvkcUYtzGqmDuyRVhWc8szN1rFgm7aUOju2NXsEVGfHWDRtBZWiNJ-"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-secondary text-on-secondary rounded-full flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[11px]" data-icon="explore">explore</span>
+</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Rodrigo F. Brandão</h2>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-bold">Origem: Guia Local</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">Vi vocês no mapa de cafeterias do bairro! Têm mesas para notebook com tomada?</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Ontem</span>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary font-medium">1ª interação do cliente</span>
+<button class="px-2.5 py-1 bg-secondary text-on-secondary hover:bg-secondary/90 rounded-lg text-label-sm font-label-sm font-bold transition-all active:scale-95 shadow-sm">
+            Responder
+          </button>
+</div>
+</article>
+</main>
+<!-- Botão Flutuante Comercial (FAB) com Ícone de Catálogo / Mensagem Rápida -->
+<div class="fixed bottom-20 right-4 z-40 max-w-md mx-auto">
+<button class="flex items-center space-x-2 bg-primary-container text-on-primary px-4 py-3 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-150" style="box-shadow: 0px 8px 16px -2px rgba(15, 118, 110, 0.35);" title="Nova Ação Comercial">
+<span class="material-symbols-outlined text-[22px]" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg font-bold">Novo Atendimento</span>
+</button>
+</div>
+<!-- BottomNavBar Conforme Shared Components JSON com Aba 'Conversas' Ativa -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-md mx-auto bg-surface-container-lowest/90 backdrop-blur-md shadow-md border-t border-outline-variant/30">
+<!-- Conversas (Ativo no contexto da página) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined fill-1 text-[20px]" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="text-label-sm font-label-sm mt-0.5">Conversas</span>
+</a>
+<!-- Status -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="motion_photos_on">motion_photos_on</span>
+<span class="text-label-sm font-label-sm mt-0.5">Status</span>
+</a>
+<!-- Guia Local -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="explore">explore</span>
+<span class="text-label-sm font-label-sm mt-0.5">Guia Local</span>
+</a>
+<!-- Ajustes -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="text-label-sm font-label-sm mt-0.5">Ajustes</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carteira Digital - Mensagens</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#9cf2e8",
+            "surface-variant": "#dae2fd",
+            "surface-dim": "#d2d9f4",
+            "on-surface": "#131b2e",
+            "background": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "tertiary-container": "#945d00",
+            "inverse-primary": "#80d5cb",
+            "on-secondary-fixed-variant": "#004b73",
+            "outline": "#6e7977",
+            "error-container": "#ffdad6",
+            "secondary-container": "#5bb8fe",
+            "surface-container-low": "#f2f3ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-tertiary-fixed": "#2a1700",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#3e4947",
+            "on-primary-fixed": "#00201d",
+            "on-background": "#131b2e",
+            "primary-container": "#0f766e",
+            "surface-container-high": "#e2e7ff",
+            "tertiary": "#734700",
+            "secondary-fixed": "#cce5ff",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#00476e",
+            "on-tertiary-container": "#ffe6cc",
+            "primary": "#005c55",
+            "on-primary": "#ffffff",
+            "secondary": "#006398",
+            "on-secondary-fixed": "#001d31",
+            "surface-tint": "#006a63",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#653e00",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-fixed-variant": "#00504a",
+            "surface-container": "#eaedff",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#a3faef",
+            "secondary-fixed-dim": "#93ccff",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#80d5cb",
+            "outline-variant": "#bdc9c6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Wrapper Container (390px baseline responsive up to md) -->
+<div class="w-full max-w-md mx-auto bg-surface min-h-screen flex flex-col relative pb-24 shadow-2xl">
+<!-- Top App Bar (Customized with task-specific Back & Wallet Title while keeping JSON styling tokens) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-margin h-14">
+<!-- Leading Action: Voltar/Back -->
+<button aria-label="Voltar" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<!-- Title and End-to-End Safety Lock Badge -->
+<div class="flex items-center gap-1.5">
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Carteira Digital</h1>
+<span class="material-symbols-outlined text-[16px] text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<!-- Trailing Action: Quick Security & QR scanner shortcut -->
+<div class="flex items-center gap-1">
+<button aria-label="Segurança" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">shield_lock</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Flow -->
+<main class="flex-1 px-margin pt-space-md space-y-space-xl">
+<!-- Balance & Quick-Pay Bento Card (WhatsApp/Telegram Financial Mesh) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm relative overflow-hidden">
+<!-- Subtle gradient glow in top right -->
+<div class="absolute -top-10 -right-10 w-28 h-28 bg-primary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Saldo em Conta Mensagens</span>
+</div>
+<button aria-label="Mostrar/Ocultar Saldo" class="text-on-surface-variant hover:text-primary transition-colors p-1" id="toggleBalance">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<div class="flex items-baseline gap-1.5 my-1">
+<span class="font-label-lg text-label-lg text-on-surface-variant">R$</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">3.482,90</span>
+<span class="ml-2 inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed/40 text-primary font-bold">
+            + Rendendo 102% CDI
+          </span>
+</div>
+<!-- Quick Action Trigger Strip -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-md mt-space-sm border-t border-outline-variant/20">
+<!-- Action 1: Pagar com QR Code (Emerald Highlight) -->
+<button class="flex flex-col items-center justify-center p-2 rounded-xl bg-primary-container text-on-primary shadow-sm hover:opacity-95 transition active:scale-95 group">
+<div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center mb-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+</div>
+<span class="font-label-sm text-label-sm text-center font-bold tracking-tight">Pagar QR</span>
+</button>
+<!-- Action 2: Cobrar / Pix (Cyan Accent / Secondary) -->
+<button class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition active:scale-95 group">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center mb-1 text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+</div>
+<span class="font-label-sm text-label-sm text-center font-bold">Cobrar / Pix</span>
+</button>
+<!-- Action 3: Ver Comprovantes -->
+<button class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition active:scale-95 group">
+<div class="w-9 h-9 rounded-full bg-surface-variant flex items-center justify-center mb-1 text-on-surface group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<span class="font-label-sm text-label-sm text-center font-bold">Comprovantes</span>
+</button>
+</div>
+</section>
+<!-- Cartões de Pagamento Section -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Cartões de Pagamento</h2>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant font-medium">3 ativos</span>
+</div>
+<button class="font-label-md text-label-md text-primary font-bold flex items-center gap-0.5 hover:underline active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+            + Adicionar
+          </button>
+</div>
+<!-- Horizontal Swipeable Interactive Card Carousel -->
+<div class="flex gap-space-md overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+<!-- Card 1: Mastercard Black Personal (Deep Emerald / Dark Tone) -->
+<div class="min-w-[260px] h-40 rounded-xl p-space-md flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-primary-container via-[#074b46] to-on-primary-fixed shadow-md active:scale-[0.98] transition cursor-pointer text-white">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex justify-between items-start z-10">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">contactless</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase opacity-80">Crédito Instantâneo</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-5 h-5 rounded-full bg-red-500 opacity-90"></div>
+<div class="w-5 h-5 rounded-full bg-amber-400 opacity-80"></div>
+</div>
+</div>
+<div class="z-10">
+<p class="font-body-md text-body-md tracking-widest font-mono text-white/90">•••• •••• •••• 4892</p>
+<div class="flex justify-between items-end mt-1 text-white/70">
+<span class="font-label-sm text-label-sm uppercase font-bold text-white">Lucas Alcantara</span>
+<span class="font-label-sm text-label-sm font-mono">11/29</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Visa Virtual Pix Card (Cyan Business/Professional Accent) -->
+<div class="min-w-[260px] h-40 rounded-xl p-space-md flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-[#0284c7] via-[#0369a1] to-[#082f49] shadow-md active:scale-[0.98] transition cursor-pointer text-white">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-lg pointer-events-none"></div>
+<div class="flex justify-between items-start z-10">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">shield</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase opacity-80">Pix Virtual Seguro</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold italic tracking-tighter text-white">VISA</span>
+</div>
+<div class="z-10">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-white/20 text-white font-mono">CVV Dinâmico</span>
+<span class="font-label-sm text-label-sm text-white/80">Uso único</span>
+</div>
+<div class="flex justify-between items-end text-white/70">
+<p class="font-body-md text-body-md tracking-widest font-mono text-white/90">•••• •••• •••• 8104</p>
+<span class="font-label-sm text-label-sm font-mono">08/30</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Adicionar Novo Cartão / Card Ghost Slot -->
+<div class="min-w-[140px] h-40 rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-3 text-center bg-surface-container-low/60 hover:bg-surface-container-low transition cursor-pointer active:scale-95">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[22px]">add</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Novo Cartão</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Crédito ou Débito</span>
+</div>
+</div>
+</section>
+<!-- Documentos Digitais Oficiais Section -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Documentos Digitais Oficiais</h2>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Validação Gov.br">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
+            Gov.br Conectado
+          </span>
+</div>
+<!-- Documents Bento Stack -->
+<div class="space-y-space-sm">
+<!-- Document 1: CNH Digital -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm flex items-center justify-between hover:bg-surface-container-low/40 transition active:scale-[0.99] cursor-pointer">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-[#e6f4f1] text-primary flex items-center justify-center shrink-0 relative">
+<span class="material-symbols-outlined text-[28px]">directions_car</span>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary text-white rounded-full flex items-center justify-center text-[10px]">✓</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">CNH Digital</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-primary-fixed/50 text-on-primary-fixed font-bold rounded-full">Válida</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">Cat. AB • Reg: 04982184910</p>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-label-sm text-label-sm">Expira em: 14/09/2028</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Abrir QR Code CNH" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition active:scale-90">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+<button aria-label="Ver detalhes" class="w-7 h-7 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Document 2: RG Digital (Carteira de Identidade Nacional - CIN) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm flex items-center justify-between hover:bg-surface-container-low/40 transition active:scale-[0.99] cursor-pointer">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">badge</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">RG / CIN Digital</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed font-bold rounded-full">Autêntico</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">CPF / CIN: 394.***.***-01</p>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-label-sm text-label-sm">SSP / SP • Via Oficial</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Abrir QR Code RG" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-secondary hover:text-white transition active:scale-90">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+<button aria-label="Ver detalhes" class="w-7 h-7 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Document 3: Cartão SUS -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm flex items-center justify-between hover:bg-surface-container-low/40 transition active:scale-[0.99] cursor-pointer">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">medical_services</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Cartão Nacional SUS</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container-highest text-on-surface-variant font-medium rounded-full">CNS Ativo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">CNS: 704 2091 4820 0019</p>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-label-sm text-label-sm">Vacinas em dia • ConecteSUS</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Código de Barras SUS" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition active:scale-90">
+<span class="material-symbols-outlined text-[20px]">barcode</span>
+</button>
+<button aria-label="Ver detalhes" class="w-7 h-7 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Document 4: Título de Eleitor & Certidões -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm flex items-center justify-between hover:bg-surface-container-low/40 transition active:scale-[0.99] cursor-pointer">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">how_to_vote</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Título de Eleitor</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-tertiary-fixed-dim text-on-tertiary-fixed font-bold rounded-full">Biometria OK</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">Zona 248 • Seção 0312</p>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-label-sm text-label-sm">Quitação eleitoral ativa</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Abrir Título Digital" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition active:scale-90">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+<button aria-label="Ver detalhes" class="w-7 h-7 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Security & Privacy Audit Banner (WhatsApp style encryption reassurance) -->
+<section class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/20 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px] mt-0.5" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface">Criptografia de Ponta a Ponta</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Seus cartões de crédito e documentos federais são protegidos pelo enclave de segurança do dispositivo e nunca são compartilhados nas conversas sem seu consentimento biométrico.
+          </p>
+</div>
+</section>
+</main>
+<!-- Shared Component: BottomNavBar (Exact JSON Anchors with Ajustes/Wallet semantic mapping) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-md mx-auto bg-surface-container-lowest/90 backdrop-blur-md shadow-md border-t border-outline-variant/30">
+<!-- Tab 1: Conversas -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+<span class="font-label-sm text-label-sm mt-0.5">Conversas</span>
+</a>
+<!-- Tab 2: Status -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]">motion_photos_on</span>
+<span class="font-label-sm text-label-sm mt-0.5">Status</span>
+</a>
+<!-- Tab 3: Guia Local -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="font-label-sm text-label-sm mt-0.5">Guia Local</span>
+</a>
+<!-- Tab 4: Ajustes (Active state: Wallet sits under Account/Settings category) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-sm text-label-sm mt-0.5 font-bold">Ajustes</span>
+</a>
+</nav>
+</div>
+<!-- Interactive micro-feedback script -->
+<script>
+    // Balance display toggle
+    const toggleBtn = document.getElementById('toggleBalance');
+    let balanceVisible = true;
+    toggleBtn.addEventListener('click', () => {
+      balanceVisible = !balanceVisible;
+      const icon = toggleBtn.querySelector('.material-symbols-outlined');
+      const balanceEl = document.querySelector('.text-headline-lg-mobile');
+      if (balanceVisible) {
+        icon.textContent = 'visibility';
+        balanceEl.textContent = '3.482,90';
+      } else {
+        icon.textContent = 'visibility_off';
+        balanceEl.textContent = '••••••••';
+      }
+    });
+  </script>
+</body></html>

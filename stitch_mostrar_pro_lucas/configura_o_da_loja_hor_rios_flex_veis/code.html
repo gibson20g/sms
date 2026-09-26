@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minha Loja &amp; Funcionamento</title>
+<!-- Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006398",
+            "secondary-fixed": "#cce5ff",
+            "outline": "#6e7977",
+            "on-background": "#131b2e",
+            "primary-container": "#0f766e",
+            "surface-tint": "#006a63",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#ffe6cc",
+            "on-primary-fixed": "#00201d",
+            "surface-bright": "#faf8ff",
+            "on-surface": "#131b2e",
+            "tertiary": "#734700",
+            "on-secondary-fixed": "#001d31",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-secondary-fixed-variant": "#004b73",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#80d5cb",
+            "surface": "#faf8ff",
+            "outline-variant": "#bdc9c6",
+            "inverse-on-surface": "#eef0ff",
+            "background": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "secondary-fixed-dim": "#93ccff",
+            "on-primary-container": "#a3faef",
+            "on-primary-fixed-variant": "#00504a",
+            "secondary-container": "#5bb8fe",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-container-low": "#f2f3ff",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#80d5cb",
+            "primary-fixed": "#9cf2e8",
+            "on-surface-variant": "#3e4947",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "on-tertiary": "#ffffff",
+            "primary": "#005c55",
+            "on-secondary-container": "#00476e",
+            "tertiary-container": "#945d00",
+            "tertiary-fixed-dim": "#ffb95f",
+            "inverse-surface": "#283044",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#dae2fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+<div class="min-h-screen flex justify-center w-full">
+<!-- Mobile Canvas (Target 390px-440px) -->
+<main class="w-full max-w-md bg-background min-h-screen pb-32 relative shadow-2xl flex flex-col">
+<!-- TOP APP BAR (Sub-page Header: Clean, Back Action & Preview Trigger) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-margin h-14">
+<div class="flex items-center space-x-space-sm">
+<button aria-label="Voltar" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-surface-container active:scale-95 transition-all text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Minha Loja &amp; Funcionamento</h1>
+</div>
+<button class="flex items-center space-x-1 px-3 py-1.5 rounded-full bg-secondary-fixed/50 hover:bg-secondary-fixed text-secondary font-label-md text-label-md active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Ver como cliente</span>
+</button>
+</div>
+</header>
+<!-- MAIN CONTENT CONTAINER -->
+<div class="px-margin space-y-space-lg pt-space-md">
+<!-- 1. IDENTIDADE DA LOJA & DADOS BÁSICOS -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-space-md">
+<!-- Avatar / Logo da Loja -->
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl overflow-hidden ring-2 ring-primary/20 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A brightly lit specialty artisan bakery counter with fresh sourdough breads, golden flaky croissants, and a modern chrome espresso machine in an airy urban café setting. Soft sunbeams illuminate organic ceramic cups with polished wood textures in a contemporary warm minimalist aesthetic. The color atmosphere blends serene emerald, creamy whites, and warm earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXgX3tB9fgsxal7u7dmyD0zSX8yM-22tKmHHVcqPO9R4U9Wwtoic3EHfzqsoNteGRhv7YGGqyrOsWa7qIKsfaf3ouBiot4himK35G8ydUiisLE0whfEsZBfB7QhvrOgNbQyQUNIRyZbHgfnPG3UBcHtuVzclDMUZhcggvyo3kYs_bwGFGobJD3l4MPyWCGtDLVw2Fxs_dUajuKvlzlQOUxVXfiGW_QNogjseJKIm9Y8eEBtPz2BdHY"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</div>
+<!-- Dados Descritivos -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Café Bistrô &amp; Confeitaria</h2>
+</div>
+<p class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                Café &amp; Padaria Artesanal
+              </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-1">
+                Rua das Flores, 142 • Jardins
+              </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-primary">chat</span>
+                (11) 98452-1920
+              </p>
+</div>
+</div>
+<!-- Botão de Edição Rápida -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/20 flex justify-end">
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-on-surface-variant hover:text-primary font-label-md text-label-md bg-surface-container-low hover:bg-surface-container transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+<span>Editar perfil, fotos e contato</span>
+</button>
+</div>
+</section>
+<!-- 2. CHAVE MESTRA / STATUS EM TEMPO REAL DE ABERTURA -->
+<section class="bg-gradient-to-br from-surface-container-lowest to-surface-container-low rounded-xl p-space-md border border-primary/20 shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<div class="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-wide block uppercase">Status Imediato</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Aberto para Clientes</h3>
+</div>
+</div>
+<!-- Switch Interativo -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="shop-status-toggle" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-outline-variant/30 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Alerta de Imprevisto / Aviso Rápido na Vitrine -->
+<div class="mt-space-md bg-surface-container-lowest rounded-lg p-space-sm border border-outline-variant/30 flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/40 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">Aviso ativo na sua vitrine</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-bold" type="button">Editar</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface italic mt-0.5 truncate">
+                “Chegamos mais cedo hoje com fornada especial de brioches!”
+              </p>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 mt-space-sm">
+<button class="flex-1 py-1.5 px-2 bg-error-container/60 hover:bg-error-container text-on-error-container rounded-lg font-label-md text-label-md flex items-center justify-center gap-1 transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[15px]">event_busy</span>
+<span>Pausar hoje por imprevisto</span>
+</button>
+<button class="py-1.5 px-3 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg font-label-md text-label-md flex items-center justify-center gap-1 transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>Pausar 1h</span>
+</button>
+</div>
+</section>
+<!-- 3. DIAS E HORÁRIOS DE FUNCIONAMENTO (FLEXÍVEIS & SIMPLES) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Horário de Funcionamento</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure a rotina semanal padrão da sua loja</p>
+</div>
+<span class="material-symbols-outlined text-outline">calendar_month</span>
+</div>
+<!-- Ação Rápida: Copiar Horário -->
+<div class="flex justify-end">
+<button class="inline-flex items-center gap-1 text-primary font-label-md text-label-md hover:underline active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copiar Seg para dias úteis</span>
+</button>
+</div>
+<!-- Lista de Dias da Semana -->
+<div class="space-y-space-xs divide-y divide-outline-variant/15">
+<!-- Segunda-feira -->
+<div class="pt-2 pb-1 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface w-20">Segunda</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="08:00"/>
+<span class="text-on-surface-variant">às</span>
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="18:30"/>
+</div>
+</div>
+<!-- Terça-feira -->
+<div class="pt-2 pb-1 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface w-20">Terça</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="08:00"/>
+<span class="text-on-surface-variant">às</span>
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="18:30"/>
+</div>
+</div>
+<!-- Quarta-feira -->
+<div class="pt-2 pb-1 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface w-20">Quarta</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="08:00"/>
+<span class="text-on-surface-variant">às</span>
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="18:30"/>
+</div>
+</div>
+<!-- Quinta-feira -->
+<div class="pt-2 pb-1 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface w-20">Quinta</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="08:00"/>
+<span class="text-on-surface-variant">às</span>
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="18:30"/>
+</div>
+</div>
+<!-- Sexta-feira -->
+<div class="pt-2 pb-1 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface w-20">Sexta</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="08:00"/>
+<span class="text-on-surface-variant">às</span>
+<input class="w-16 text-center py-1 px-1 bg-surface-container-low border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary focus:ring-0" type="text" value="20:00"/>
+</div>
+</div>
+<!-- Sábado (Flexível) -->
+<div class="pt-2 pb-1 flex items-center justify-between bg-surface-container-low/50 px-2 rounded-lg">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Sábado</span>
+<span class="font-label-sm text-label-sm text-primary">Horário Flexível</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-body-sm text-body-sm">
+<input class="w-16 text-center py-1 px-1 bg-surface-container-lowest border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary" type="text" value="09:00"/>
+<span class="text-on-surface-variant">às</span>
+<input class="w-16 text-center py-1 px-1 bg-surface-container-lowest border border-outline-variant/30 rounded font-label-md text-label-md focus:border-primary" type="text" value="15:00"/>
+</div>
+</div>
+<!-- Domingo (Fechado) -->
+<div class="pt-2 pb-1 flex items-center justify-between opacity-75">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface-variant w-20">Domingo</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant/70 italic pr-2">Fechado o dia todo</span>
+</div>
+</div>
+</section>
+<!-- 4. SENSOR COMUNITÁRIO & CONFIRMAÇÃO COLABORATIVA -->
+<section class="bg-surface-container-low rounded-xl p-space-md border border-secondary-fixed-dim/40 relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Confirmação Colaborativa Ativa</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label-sm text-label-sm font-bold">IA Local</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Quando clientes reportam movimentação ou checam o endereço, o app confirma se você está aberto em tempo real, evitando perda de vendas.
+              </p>
+</div>
+</div>
+<!-- Estatística de Confiabilidade -->
+<div class="mt-space-md bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-between border border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">trending_up</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Concordância da Comunidade</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">98% de precisão</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-primary font-bold">7 dias analisados</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">126 confirmações</span>
+</div>
+</div>
+</section>
+<!-- 5. AVALIAÇÕES & REPUTAÇÃO DOS CLIENTES -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/30 shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Avaliações da Comunidade</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Como os clientes locais enxergam o seu atendimento</p>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 bg-surface-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4.9</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">142 depoimentos</span>
+</div>
+</div>
+<!-- Tags Elogiadas -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+              Atendimento ágil
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              Comida impecável
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              Ambiente acolhedor
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              Horário confiável
+            </span>
+</div>
+<!-- Feed de Avaliações Recentes -->
+<div class="space-y-space-sm pt-space-xs">
+<!-- Avaliação 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/60 border border-outline-variant/20 space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">
+                    MC
+                  </div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Mariana Costa</span>
+</div>
+<div class="flex items-center text-tertiary-container text-[14px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                “Sempre com café fresquinho e bolo quentinho! O aviso de abertura no zap facilita muito minha rotina.”
+              </p>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Há 2 dias</span>
+<div class="flex items-center gap-3">
+<button class="hover:text-primary flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[14px]">favorite</span> Curtir
+                  </button>
+<button class="hover:text-primary flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[14px]">reply</span> Responder
+                  </button>
+</div>
+</div>
+</div>
+<!-- Avaliação 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/60 border border-outline-variant/20 space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold">
+                    RA
+                  </div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Rodrigo Alencar</span>
+</div>
+<div class="flex items-center text-tertiary-container text-[14px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                “Atendimento super rápido pelo zap! Cheguei bem no horário flexível de sábado e fui muito bem atendido.”
+              </p>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Há 5 dias</span>
+<div class="flex items-center gap-3">
+<button class="text-primary font-bold flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">favorite</span> Curtido
+                  </button>
+<button class="hover:text-primary flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[14px]">reply</span> Ver resposta
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 6. BARRA INFERIOR FIXA / SALVAR ALTERAÇÕES -->
+<!-- Task-focused sub-page with back action: Global BottomNavBar suppressed per Semantic Shell rules to prioritize action canvas -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-center bg-surface-container-lowest/90 backdrop-blur-md shadow-lg">
+<div class="w-full max-w-md p-space-md flex items-center gap-space-sm">
+<button class="px-4 py-3 rounded-xl border border-outline-variant/40 bg-surface text-on-surface font-label-lg text-label-lg active:scale-95 transition-all" type="button">
+            Descartar
+          </button>
+<button class="flex-1 py-3 px-space-md rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-95 transition-all" id="btn-save" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Salvar Alterações</span>
+</button>
+</div>
+</footer>
+</main>
+</div>
+<!-- Interactive script for status feedback -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('shop-status-toggle');
+      const btnSave = document.getElementById('btn-save');
+
+      if (toggle) {
+        toggle.addEventListener('change', (e) => {
+          const isChecked = e.target.checked;
+          const statusText = toggle.closest('section').querySelector('h3');
+          if (statusText) {
+            statusText.textContent = isChecked ? 'Aberto para Clientes' : 'Fechado temporariamente';
+          }
+        });
+      }
+
+      if (btnSave) {
+        btnSave.addEventListener('click', () => {
+          const originalText = btnSave.innerHTML;
+          btnSave.innerHTML = `
+            <span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>
+            <span>Salvando dados...</span>
+          `;
+          setTimeout(() => {
+            btnSave.innerHTML = `
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              <span>Horários Atualizados!</span>
+            `;
+            setTimeout(() => {
+              btnSave.innerHTML = originalText;
+            }, 2000);
+          }, 600);
+        });
+      }
+    });
+  </script>
+</body></html>

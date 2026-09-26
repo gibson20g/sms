@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Mensagens - Hub Unificado</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed": "#00201d",
+            "secondary": "#006398",
+            "surface-bright": "#faf8ff",
+            "primary": "#005c55",
+            "on-tertiary-container": "#ffe6cc",
+            "surface-tint": "#006a63",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004b73",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-dim": "#d2d9f4",
+            "on-background": "#131b2e",
+            "on-secondary-fixed": "#001d31",
+            "primary-fixed-dim": "#80d5cb",
+            "surface-container-high": "#e2e7ff",
+            "tertiary": "#734700",
+            "on-tertiary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#93ccff",
+            "inverse-on-surface": "#eef0ff",
+            "on-error-container": "#93000a",
+            "secondary-container": "#5bb8fe",
+            "on-secondary-container": "#00476e",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#00504a",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "background": "#faf8ff",
+            "surface": "#faf8ff",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#3e4947",
+            "tertiary-fixed": "#ffddb8",
+            "on-surface": "#131b2e",
+            "inverse-primary": "#80d5cb",
+            "outline-variant": "#bdc9c6",
+            "on-primary-container": "#a3faef",
+            "tertiary-container": "#945d00",
+            "surface-container": "#eaedff",
+            "secondary-fixed": "#cce5ff",
+            "primary-fixed": "#9cf2e8",
+            "on-error": "#ffffff",
+            "primary-container": "#0f766e",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6e7977",
+            "tertiary-fixed-dim": "#ffb95f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex justify-center pb-24 select-none">
+<!-- Mobile Viewport Wrapper (390px responsive canvas) -->
+<div class="w-full max-w-md bg-surface flex flex-col min-h-screen relative shadow-2xl">
+<!-- TopAppBar (Anchored Shared Component) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 dark:bg-surface/85 backdrop-blur-md shadow-sm border-b border-outline-variant/30 dark:border-outline/30">
+<div class="flex justify-between items-center w-full px-margin h-14 max-w-md mx-auto">
+<!-- Leading Icon -->
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container dark:hover:bg-surface-variant transition-colors duration-150 active:scale-95 text-primary dark:text-primary-fixed" title="Alternar Identidade">
+<span class="material-symbols-outlined text-primary text-[24px]">switch_account</span>
+</button>
+<!-- Brand / Headline -->
+<div class="flex flex-col items-center">
+<span class="text-headline-sm font-headline-sm text-on-surface dark:text-inverse-on-surface tracking-tight font-bold">Mensagens</span>
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-outline">Modo Unificado</span>
+</div>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container dark:hover:bg-surface-variant transition-colors duration-150 active:scale-95 text-on-surface-variant" title="Guia Local &amp; Mapa">
+<span class="material-symbols-outlined text-[24px]">map</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Context Switcher Segmented Bar (Precision Control) -->
+<section class="px-margin pt-space-md pb-space-xs">
+<div class="bg-surface-container p-1 rounded-xl flex items-center gap-1 shadow-inner">
+<button class="flex-1 py-1.5 px-space-sm bg-surface-container-lowest rounded-lg shadow-sm flex items-center justify-center gap-1.5 transition-all text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">all_inbox</span>
+<span class="text-label-md font-label-md font-bold">Tudo</span>
+<span class="bg-surface-variant text-secondary text-label-sm font-label-sm px-1.5 py-0.5 rounded-full">14</span>
+</button>
+<button class="flex-1 py-1.5 px-space-sm rounded-lg flex items-center justify-center gap-1.5 text-on-surface-variant hover:bg-surface-container-lowest/50 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary-container">storefront</span>
+<span class="text-label-md font-label-md">Café Bistrô</span>
+<span class="bg-primary-container text-on-primary-container text-label-sm font-label-sm px-1.5 py-0.5 rounded-full">5</span>
+</button>
+<button class="flex-1 py-1.5 px-space-sm rounded-lg flex items-center justify-center gap-1.5 text-on-surface-variant hover:bg-surface-container-lowest/50 transition-all">
+<span class="material-symbols-outlined text-[18px] text-secondary">person</span>
+<span class="text-label-md font-label-md">Pessoal</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-1.5 py-0.5 rounded-full">2</span>
+</button>
+</div>
+</section>
+<!-- Search Bar with Micro-Interactions -->
+<div class="px-margin py-space-xs">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">search</span>
+<input class="w-full bg-surface-container-low pl-10 pr-10 py-2 rounded-xl text-body-md font-body-md text-on-surface placeholder:text-outline border-0 focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Buscar conversas, pedidos ou contatos..." type="text"/>
+<button class="absolute right-3 text-outline hover:text-on-surface" title="Filtros avançados">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Quick Pill Filters Horizontal Carousel -->
+<section class="py-space-xs">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-margin">
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary text-label-md font-label-md shadow-sm transition-transform active:scale-95">
+          Todas
+        </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface text-label-md font-label-md flex items-center gap-1.5 hover:bg-surface-container transition-colors">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Bistrô (Loja Aberta)</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface text-label-md font-label-md flex items-center gap-1.5 hover:bg-surface-container transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Mariana (Pessoal)</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-on-surface text-label-md font-label-md flex items-center gap-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-error text-[16px]">mark_chat_unread</span>
+<span>Não lidas (7)</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/50 text-tertiary text-label-md font-label-md flex items-center gap-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-tertiary text-[16px]">receipt_long</span>
+<span>Pedidos &amp; Vendas</span>
+</button>
+</div>
+</section>
+<!-- Segmented Status Bar (Stories & Highlights) -->
+<section class="py-space-md border-b border-outline-variant/20">
+<div class="px-margin flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-outline tracking-wider uppercase">Atualizações &amp; Status</span>
+<button class="text-primary text-label-sm font-label-sm hover:underline">Ver todos</button>
+</div>
+<div class="flex items-center gap-3.5 overflow-x-auto no-scrollbar px-margin">
+<!-- Add Status Bubble -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer group">
+<div class="relative w-14 h-14 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center bg-surface-container-low group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-[24px]">add_photo_alternate</span>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] font-bold">+</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface truncate w-14 text-center">Meu Status</span>
+</div>
+<!-- Commercial Status (Multi-segmented Cyan/Emerald ring) -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-primary-container via-primary-fixed to-secondary">
+<div class="w-full h-full rounded-full bg-surface-container-lowest p-[1.5px] overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A brightly lit specialty coffee shop counter showing modern brass espresso equipment, ceramic mugs, and warm wood textures under cinematic sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAilPqEX71EiKbMssaU4l6WO3CzHWmhISs7yIYkpsHYWhfY52GMhv1IjjzRNcsAQuqaa1L-jgwo29LrPl4AQFrSCkc6uQS1JAazqQxoSJYOBmH4WIkkG54Oqb9j76yNHK0vFhYLefYOiUywbw7NrTSBGt4ANT9zGWv-cwO08KRt0Y3xFowCwRw6ELcdAz0DfK3EjIw98h7mmMNV6Qq-SDA65MYenDAlACCN8uVdsKUYG297ZbnLIrIS"/>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold truncate w-16 text-center">Café Bistrô</span>
+</div>
+<!-- Personal Status 1 -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2px] border-2 border-secondary">
+<div class="w-full h-full rounded-full bg-surface-container-lowest p-[1.5px] overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A portrait of a smiling young Brazilian woman with curly dark hair wearing a soft green knit sweater outdoors in an urban botanical park in São Paulo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQUe_spzMr0djY3kiN7Y1zB5ZuFCKQ80kDdGAj6zi3DWXiD3CslNW9zU2eAVX74fsvII8m4OMrVfmO9uzHBMyLcEuHxQEGbVQyiBlzGamuHcI0B6by_yBez-TskdcPdsOHpvP3YjqBQy-iQZkJGrXXlSjqoMUXrGEdFUrSsEEyhf4CFKt9f3GzOuzbRx3L1bfDfWiaTJDWLS4uUGglYjhwJvIeFWDagAIti-uLDkDR_j2US6lZ_WDG"/>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface truncate w-14 text-center">Mariana R.</span>
+</div>
+<!-- Commercial Supplier Status -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2px] border-2 border-primary-container">
+<div class="w-full h-full rounded-full bg-surface-container-lowest p-[1.5px] overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="Freshly harvested organic Arabica coffee cherries and roasted deep brown beans displayed in rustic jute sacks in a roastery warehouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdzeLqwpT-k3woBS04YFClcj0pDS7_iRlCA_RL_2bBJPTxzlFiQClmI4TyjqbbjxCPV_ScxUmJD-SY1lSn9kFsnVV8HVLJn_WPND-LxzkGFKGKyi7DD2DBqFSiRt-PVHjH18P93rHMF2ecO19UCREHk6cYw61LylRFXACUHTpLVkxvKiftTRTcU_GZRYrP3JC5_QXc0_QlSeU-E_3XKqbeSbhcLXqwTh3l3KOGkJrjiDgADKaPcjFi"/>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface truncate w-14 text-center">Grãos Sul</span>
+</div>
+<!-- Personal Status 2 -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2px] border-2 border-outline-variant">
+<div class="w-full h-full rounded-full bg-surface-container-lowest p-[1.5px] overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A handsome middle-aged man in casual denim shirt laughing during a family barbecue on a sunny afternoon patio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_ptqqwwjXnhwz1mXGMxwh1cBVZK0NeullxjfBp6QmQxxCQDfH504dt10K82WI5dO83EYElv7TwRwE_tuoTv2I4gj6uSk85B99PF_-vtJtANVE-LfPLtrVkAp1nUBmRCQqavDf_oBAuX2Yo0uXR1IRtKp6c60jtCMF-1pa_rvHeCynwsmBZq8aeAwRjC1dOeFkODe8z-mQoBZm3fWY5DcdtoN1kGjdfbE74phX-2y9qEzfRDZ5B6CN"/>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-outline truncate w-14 text-center">Pai</span>
+</div>
+<!-- Local Partner Status -->
+<div class="flex flex-col items-center gap-1.5 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2px] border-2 border-primary-container">
+<div class="w-full h-full rounded-full bg-surface-container-lowest p-[1.5px] overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="Golden crisp artisanal croissants and sourdough loaves on a marble counter in a French inspired boutique bakery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUsk5FFKZaUyhOi_281txZB3Bza04znlT7nqIhZSY1_oD9EwxwUF0SfNcRDKQLqxkGKnRRGzwxfiq0i1Lyl5fZxS67MQN-dnCgMj8LAavgpGCQlRfjwACImYTsIpCIEds3HEyJsN0n1DXOiq_6e1bQYaywdByFjsiE9OI7dAZHtqnlTD4uKLD1S_GGXyFWwJ6tXPRRsw-eNllrRaiWCVWshkFO9wx1_TvffRHEx7CWjWPjmhkTYZ_9"/>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface truncate w-14 text-center">Pão Nobre</span>
+</div>
+</div>
+</section>
+<!-- Feed de Conversas Unificado -->
+<main class="flex-1 divide-y divide-outline-variant/15">
+<!-- ITEM 1: Comercial (Bistrô) - Pedido / Encomenda em Andamento -->
+<article class="relative flex items-start gap-3.5 px-margin py-3.5 bg-surface-container-lowest hover:bg-surface-container/30 transition-colors cursor-pointer border-l-4 border-l-primary-container">
+<!-- Avatar with Badge -->
+<div class="relative flex-shrink-0">
+<img class="w-13 h-13 rounded-full object-cover w-[52px] h-[52px]" data-alt="A friendly young woman customer with glasses smiling in a modern office lobby holding a reusable coffee tumbler." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-bpvsu_yDOOdfWebrEnIAqmQFvX8cwCE2aAtTwDTpWFudNGngmUwrsx7lbYcO9eeMoyf7Ukja0JZgZOHb1M3Y3MxVxxJeGw43bCpbtn31zuSqYxJMEIr2PCXN-BqHDfWoH9pbpomfy2rGzuhPGdr1Ms3ouKlA7jHgtITlA8w0xvgIROiZDFfOQ2vUsRrDnObgMCWJ64JRkrJYAbCTw85fGhg3Fl1bTGu-5XaM1zBrkKkMHZdv96tK"/>
+<span class="absolute -bottom-1 -right-1 bg-primary-container text-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+</span>
+</div>
+<!-- Message Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="text-label-lg font-label-lg font-bold text-on-surface truncate">Camila Duarte</h2>
+<span class="bg-primary-container/10 text-primary-container text-label-sm font-label-sm px-1.5 py-0.5 rounded font-semibold">Cliente</span>
+</div>
+<time class="text-label-sm font-label-sm text-primary font-semibold flex-shrink-0">09:42</time>
+</div>
+<!-- Business Context Chip -->
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-surface-container-high text-primary px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">shopping_bag</span>
+              Pedido #1048 • 3x Cappuccino + Croissant
+            </span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-body-md font-body-md text-on-surface font-medium truncate pr-2">
+              "Bom dia! O pedido já saiu para a entrega de moto?"
+            </p>
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center justify-center font-bold">1</span>
+</div>
+</div>
+</article>
+<!-- ITEM 2: Pessoal - Mariana R. -->
+<article class="relative flex items-start gap-3.5 px-margin py-3.5 bg-surface-container-lowest hover:bg-surface-container/30 transition-colors cursor-pointer border-l-4 border-l-secondary">
+<!-- Avatar -->
+<div class="relative flex-shrink-0">
+<img class="w-[52px] h-[52px] rounded-full object-cover" data-alt="A portrait of a stylish woman with warm eyes smiling gently in a bright cafe setting holding a ceramic mug." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAVtTIj4J1WNr9KqcjiaU_rYuX2btbFS-TIVg98QhE5bJoAw7GPvuek96ZeyiH-Xx7mEsL_2NUz93Mi90cGTEuYKmoAj7-jr8NwKjBqt9evvo4QPJWEotVUi1KnjNQl7MdoH1497rsCvQHF8cSdHugBu6NK1o0CpngF_MhygDtU__pEeBQk9Q9SA_DvuZMVdTsrWPAheAsGG4A-fL18TFrR7HrGzKhhJE2xge8jYm8hHFNTTRVoCoF"/>
+<span class="absolute -bottom-1 -right-1 bg-secondary text-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">person</span>
+</span>
+</div>
+<!-- Message Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="text-label-lg font-label-lg font-bold text-on-surface truncate">Mariana Rocha</h2>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-1.5 py-0.5 rounded font-semibold">Pessoal</span>
+</div>
+<time class="text-label-sm font-label-sm text-outline flex-shrink-0">09:15</time>
+</div>
+<p class="text-body-sm font-body-sm text-outline mb-1">Amigos • Online agora</p>
+<div class="flex items-center justify-between">
+<p class="text-body-md font-body-md text-on-surface-variant truncate pr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">image</span>
+<span>Foto compartilhada: "Olha onde estou hoje!"</span>
+</p>
+<span class="material-symbols-outlined text-secondary text-[18px]">done_all</span>
+</div>
+</div>
+</article>
+<!-- ITEM 3: Comercial (Bistrô) - Fornecedor de Grãos -->
+<article class="relative flex items-start gap-3.5 px-margin py-3.5 bg-surface-container-lowest hover:bg-surface-container/30 transition-colors cursor-pointer border-l-4 border-l-primary-container">
+<!-- Avatar -->
+<div class="relative flex-shrink-0">
+<div class="w-[52px] h-[52px] rounded-xl bg-surface-container-highest flex items-center justify-center text-primary-container font-bold text-headline-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sleek corporate coffee roasting logo badge set against deep roasted coffee bean texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLNfzdWnMuv-RUVImHuncy9EnU90OkL2Dk2WkFbMHiCdR2n5SRktImAWI3r8fudO3zAFLnWCwXq778eu9Wm3z4e6kvaR84IRtxKuIrLUZVQjLklisU5keDqKwcTYvaE5oKjM1P0mjmqXszfuD-ARKfK0yBATs9ZaUtE_EclKP5JkBpIbwBoh3ec04y_C3HzAMfVqa7tCsypHpB6K0DYekjSZdCQnFvFx_7gKSO-Pl3R6BsliqRT72h"/>
+</div>
+<span class="absolute -bottom-1 -right-1 bg-primary-container text-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+</span>
+</div>
+<!-- Message Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="text-label-lg font-label-lg font-bold text-on-surface truncate">Distribuidora Grãos Nobres</h2>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm px-1.5 py-0.5 rounded font-semibold">Fornecedor</span>
+</div>
+<time class="text-label-sm font-label-sm text-outline flex-shrink-0">Ontem</time>
+</div>
+<!-- Status badge -->
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-surface-container text-tertiary px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">description</span>
+              Fatura NFe #4409 emitida • R$ 1.840,00
+            </span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-body-md font-body-md text-on-surface-variant truncate pr-2">
+              Você: Comprovante de PIX enviado. Obrigado pela agilidade!
+            </p>
+<span class="material-symbols-outlined text-outline text-[18px]">done_all</span>
+</div>
+</div>
+</article>
+<!-- ITEM 4: Pessoal - Família (Grupo) -->
+<article class="relative flex items-start gap-3.5 px-margin py-3.5 bg-surface-container-lowest hover:bg-surface-container/30 transition-colors cursor-pointer border-l-4 border-l-secondary">
+<!-- Group Avatar with grid effect -->
+<div class="relative flex-shrink-0">
+<div class="w-[52px] h-[52px] rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+<span class="absolute -bottom-1 -right-1 bg-secondary text-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">diversity_3</span>
+</span>
+</div>
+<!-- Message Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="text-label-lg font-label-lg font-bold text-on-surface truncate">Família Silva (Reunião)</h2>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-1.5 py-0.5 rounded font-semibold">Família</span>
+</div>
+<time class="text-label-sm font-label-sm text-outline flex-shrink-0">Ontem</time>
+</div>
+<p class="text-body-sm font-body-sm text-outline mb-1">Pai, Mãe, Lucas, Vó</p>
+<div class="flex items-center justify-between">
+<p class="text-body-md font-body-md text-on-surface-variant truncate pr-2">
+<span class="font-semibold text-on-surface">Lucas:</span> Domingo o almoço vai ser na casa da vó às 13h?
+            </p>
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-surface-container-highest text-secondary text-label-sm font-label-sm flex items-center justify-center font-bold">3</span>
+</div>
+</div>
+</article>
+<!-- ITEM 5: Comercial (Bistrô) - Nova Reserva & Orçamento -->
+<article class="relative flex items-start gap-3.5 px-margin py-3.5 bg-surface-container-lowest hover:bg-surface-container/30 transition-colors cursor-pointer border-l-4 border-l-primary-container">
+<!-- Avatar -->
+<div class="relative flex-shrink-0">
+<img class="w-[52px] h-[52px] rounded-full object-cover" data-alt="A well-dressed young executive in a navy blazer smiling warmly with clean architectural office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAubXeI9Cc4aMVROPrqmcXwvEIExW_jP2CF3TQoZh_d6izt8Y-Cf-HN9myy2wKRC3qMGRltunA5TwzuLYxYzxSAbPqrrt0d2dis2b5JjsBIHAjilolUjZw0i97Qg2PTMIkyotGg2iF_HRfRTFRj8M8hpGnCKjQONDGsDM7kVqMl8WLRVUDFXyx8AcRVFi7_fhQzzdu4o8vo8ejrVfL4szRehtsS86cES5-byw6xLH-qDSDabf-_T2IN"/>
+<span class="absolute -bottom-1 -right-1 bg-primary-container text-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+</span>
+</div>
+<!-- Message Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="text-label-lg font-label-lg font-bold text-on-surface truncate">Rodrigo Alencar (Evento)</h2>
+<span class="bg-primary-container/10 text-primary-container text-label-sm font-label-sm px-1.5 py-0.5 rounded font-semibold">Orçamento</span>
+</div>
+<time class="text-label-sm font-label-sm text-outline flex-shrink-0">14:10</time>
+</div>
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-surface-container-high text-primary px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">event_seat</span>
+              Reserva p/ 12 pessoas • Sexta-feira
+            </span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-body-md font-body-md text-on-surface-variant truncate pr-2">
+              "Gostaria de fechar o cardápio degustação para nossa diretoria."
+            </p>
+</div>
+</div>
+</article>
+<!-- ITEM 6: Pessoal - Pai -->
+<article class="relative flex items-start gap-3.5 px-margin py-3.5 bg-surface-container-lowest hover:bg-surface-container/30 transition-colors cursor-pointer border-l-4 border-l-secondary">
+<!-- Avatar -->
+<div class="relative flex-shrink-0">
+<img class="w-[52px] h-[52px] rounded-full object-cover" data-alt="Close-up portrait of a kind Brazilian father with grey temples and warm laughing eyes outside in morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjpL--JrfnEowwZo9Zn-ml6UM3-OZVQVFU6bhi_1y-FmsSbVbTbZqDQ_4EUwIIceQa1fUxHLupTQo1OgzYJmpmsUyE1nGL6IAcKF3GUrKoNSCbWdJUhhXlXTaEJcnxFEtPVU5awyF9kMvXAAgXvAFH2e_3_BhY6RI-uqG8R3lMiDKtI1dR-aA7-pLRmIxc6dKeMuEvzajAN3UBZ5zfIAh2ubkiizJAi2G99xmVQ_mJmOFvYzV0rTTg"/>
+<span class="absolute -bottom-1 -right-1 bg-secondary text-white rounded-full p-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">favorite</span>
+</span>
+</div>
+<!-- Message Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-0.5">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="text-label-lg font-label-lg font-bold text-on-surface truncate">Pai</h2>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-1.5 py-0.5 rounded font-semibold">Família</span>
+</div>
+<time class="text-label-sm font-label-sm text-outline flex-shrink-0">11:04</time>
+</div>
+<p class="text-body-sm font-body-sm text-outline mb-1">Pessoal</p>
+<div class="flex items-center justify-between">
+<p class="text-body-md font-body-md text-on-surface-variant truncate pr-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-outline text-[16px]">mic</span>
+<span>Mensagem de áudio (0:48)</span>
+</p>
+<span class="material-symbols-outlined text-outline text-[18px]">done</span>
+</div>
+</div>
+</article>
+</main>
+<!-- Contextual FAB (Floating Action Button) with Profile Origin Selection -->
+<div class="fixed bottom-20 right-6 z-30 flex flex-col items-end gap-2">
+<!-- Mini quick toggle chips (revealed on interaction or context) -->
+<div class="bg-surface-container-lowest/95 backdrop-blur-md rounded-2xl shadow-xl border border-outline-variant/30 p-2 flex flex-col gap-1.5 text-label-sm font-label-sm">
+<button class="flex items-center gap-2 px-3 py-1.5 hover:bg-primary-container/10 rounded-xl text-primary font-bold transition-all text-left">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Nova pelo Bistrô</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 hover:bg-secondary/10 rounded-xl text-secondary font-bold transition-all text-left">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Nova como Mariana</span>
+</button>
+</div>
+<!-- Main Action Button -->
+<button class="w-14 h-14 rounded-full bg-primary text-on-primary shadow-lg flex items-center justify-center hover:bg-primary-container active:scale-95 transition-all" title="Nova Conversa">
+<span class="material-symbols-outlined text-[28px]">edit_square</span>
+</button>
+</div>
+<!-- BottomNavBar (Shared Component from JSON) -->
+<!-- Rule executed: Conversas matches feed primary intent => active -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-md mx-auto bg-surface-container-lowest/90 dark:bg-surface/90 backdrop-blur-md shadow-md border-t border-outline-variant/30 dark:border-outline/30">
+<!-- Tab 1: Conversas (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="text-label-sm font-label-sm mt-0.5">Conversas</span>
+</a>
+<!-- Tab 2: Status (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[22px]">motion_photos_on</span>
+<span class="text-label-sm font-label-sm mt-0.5">Status</span>
+</a>
+<!-- Tab 3: Guia Local (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[22px]">explore</span>
+<span class="text-label-sm font-label-sm mt-0.5">Guia Local</span>
+</a>
+<!-- Tab 4: Ajustes (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+<span class="text-label-sm font-label-sm mt-0.5">Ajustes</span>
+</a>
+</nav>
+</div>
+</body></html>

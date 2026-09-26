@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mensagens - Plataforma Unificada</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration injected verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#bdc9c6",
+            "secondary-container": "#5bb8fe",
+            "secondary-fixed": "#cce5ff",
+            "primary-fixed-dim": "#80d5cb",
+            "on-primary-container": "#a3faef",
+            "on-primary-fixed": "#00201d",
+            "tertiary": "#734700",
+            "on-primary-fixed-variant": "#00504a",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "outline": "#6e7977",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed-dim": "#93ccff",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary": "#006398",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container": "#eaedff",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#006a63",
+            "on-secondary-container": "#00476e",
+            "on-surface-variant": "#3e4947",
+            "inverse-primary": "#80d5cb",
+            "surface-variant": "#dae2fd",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed": "#001d31",
+            "on-tertiary": "#ffffff",
+            "primary": "#005c55",
+            "surface-container-highest": "#dae2fd",
+            "background": "#faf8ff",
+            "on-background": "#131b2e",
+            "primary-fixed": "#9cf2e8",
+            "inverse-surface": "#283044",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "error": "#ba1a1a",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-container": "#ffe6cc",
+            "primary-container": "#0f766e",
+            "surface-bright": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "tertiary-container": "#945d00",
+            "on-secondary-fixed-variant": "#004b73"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Scrollbar hide for smooth aesthetic horizontal tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed flex justify-center min-h-screen">
+<!-- Mobile Screen Wrapper (390px Max Target) -->
+<div class="w-full max-w-[390px] bg-surface min-h-screen relative flex flex-col shadow-2xl pb-24 border-x border-outline-variant/20">
+<!-- TopAppBar (Anchored with Shared Components JSON rules) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 backdrop-blur-md shadow-sm border-b border-outline-variant/30 px-margin h-16 flex items-center justify-between transition-colors duration-150">
+<!-- Left cluster: Direct Account Switcher & Guia da Cidade shortcut -->
+<div class="flex items-center gap-space-sm">
+<!-- Interactive Account Switcher with active badge and contact picture -->
+<button class="flex items-center gap-1.5 p-1 pr-2 bg-surface-container-low rounded-full border border-outline-variant/40 active:scale-95 transition-transform duration-150" id="account-toggle-btn">
+<div class="relative w-8 h-8 rounded-full overflow-hidden border border-primary">
+<img class="w-full h-full object-cover" data-alt="A clean portrait headshot of a friendly professional smiling in a studio setting, soft natural lighting, pristine aesthetic reflecting modern precision minimalism, high clarity digital photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcoaQueijkYyqO4jeHLP2hXPxnXiMpXWGIiau0Kox1hPftoZ0e9fXtRdzhRVO45kXG3KJQDsPVaRAUKJH9JunAJbw7K9YCEYK_fEYFDyiuM-iwJmoOidLGQuHnE-IPtaYs-E13IixvNuayIu3BekDKKL9mPL6faErUZrWV3mmaj_sH-40mP5UqcsoZvZxNBkCLO6XUmFeAEQ6UjRWgegw_nedRsYp_XNYcrJQWodk848Y34A64TGoa"/>
+<!-- Tiny status indicator dot -->
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-container border-2 border-surface-container-lowest rounded-full" id="account-badge-dot"></span>
+</div>
+<div class="flex flex-col text-left leading-tight">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-tight" id="account-badge-label">Pessoal</span>
+<span class="text-[9px] font-label-sm text-on-surface-variant flex items-center">
+              Trocar
+              <span class="material-symbols-outlined text-[12px] leading-none ml-0.5" data-icon="expand_more">expand_more</span>
+</span>
+</div>
+</button>
+<!-- Dedicated Map icon shortcut for 'Guia da Cidade' -->
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150" title="Guia da Cidade">
+<span class="material-symbols-outlined text-primary" data-icon="map">map</span>
+</button>
+</div>
+<!-- Center Title -->
+<div class="flex-1 text-center px-1">
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Mensagens</h1>
+</div>
+<!-- Right cluster: Search and Option Menu -->
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Sub-Header Quick Filter Tabs -->
+<section class="bg-surface-container-lowest px-margin py-space-sm border-b border-outline-variant/20 sticky top-16 z-30">
+<div class="flex items-center gap-space-sm overflow-x-auto no-scrollbar py-0.5">
+<button class="filter-tab active flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm transition-all duration-150">
+          Todas
+        </button>
+<button class="filter-tab flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="storefront">storefront</span>
+          Clientes/Vendas
+        </button>
+<button class="filter-tab flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150 flex items-center gap-1">
+          Não lidas
+          <span class="bg-primary text-on-primary font-label-sm text-[10px] px-1.5 py-0.2 rounded-full">5</span>
+</button>
+<button class="filter-tab flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all duration-150">
+          Grupos
+        </button>
+</div>
+</section>
+<!-- Dynamic Status Updates Carousel (Segmented Status Bar from Design Tokens) -->
+<section class="py-space-md px-margin bg-surface-container-lowest/60 border-b border-outline-variant/15">
+<div class="flex items-center gap-3.5 overflow-x-auto no-scrollbar">
+<!-- Add Status Button -->
+<div class="flex flex-col items-center gap-1 flex-shrink-0 cursor-pointer group">
+<div class="relative w-14 h-14 rounded-full p-0.5 flex items-center justify-center bg-surface-container">
+<div class="w-full h-full rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up face of an urban modern young professional with high clarity natural daylight background, crisp sharp details, refined light tone palette matching the interface design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMsuLcURhw66tghjbAzLndOjEjbaxbHDSDXCOOuLn1JgmMrGBzHMaDj985ngzdhnDgmlrO8b3VDIJzAWA8r2vK5FZcRQNh3cAsnVb2dUCHSsLm-5hvo6Yf1EKoHOBPVnRew4-XpcGXoyVJWYDI4Rm5gEfEV5skH2B15getBeEhf-atqDTvRE_geaAmj4QB0MWXPN7tkTJFn1KKL7VcHvu55hHP26YhR2VeCcDELaKrB0jXqjveZMf"/>
+</div>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[13px] leading-none" data-icon="add">add</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Meu Status</span>
+</div>
+<!-- Status 1 (Commercial/Cyan Segmented Ring) -->
+<div class="flex flex-col items-center gap-1 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2px] ring-2 ring-secondary ring-offset-2 ring-offset-surface-container-lowest">
+<div class="w-full h-full rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern organic coffee shop storefront with sleek wooden architecture and warm cozy branding, shot in crisp morning light with minimalistic composition, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz8_kswuefVtHWyML5KdZXuqnclvjDrCj6FeDoUCv7Jhvgq5G54kDshay_9IIpfOzC9dMabZWK6iKE2Z8-dfxYPRcBDotiDpgora6BYco2ORg8lH-13x7y8AazFtgO6LYfoLOMaXaAYs8Ubzcxm9opTLh4WBp-eJAHW5eXb9gWscpgjEabAmhVNxjntmlIWucPj3ESQqyO-m2e08a7-BK1hrA8J_Xoptm_Dd1lVdF_uI9pm-ifoJyQ"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface truncate w-14 text-center">Café Alfa</span>
+</div>
+<!-- Status 2 (Personal/Emerald Ring) -->
+<div class="flex flex-col items-center gap-1 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2px] ring-2 ring-primary ring-offset-2 ring-offset-surface-container-lowest">
+<div class="w-full h-full rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Young designer working on architectural blueprints in a brightly lit contemporary studio space, clean lines and soft ambient lighting with soft green tint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjme1UuaYJxochHj9wRdOqRVTzsQ2wDB_FjO9qpcEIw1lu_EEu-Lp540pefljLCmdd6zy__jIG9c9XG-svfPCm7x3G5z2i2QuHCk-sAyfERzwrPPJKeDP0enfOmwiKKT9xawUiFA5JyXD322EUYHQ_Z070U1bl2e99KDU7zBYhzsz4mgHA1BOGIrge_emqd1HNgGTFjHtFwY779x_oe7xmMAB6L0teCN1xZlbpe8ljGyZWfyXcRzO9"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface truncate w-14 text-center">Mariana R.</span>
+</div>
+<!-- Status 3 (Commercial/Cyan) -->
+<div class="flex flex-col items-center gap-1 flex-shrink-0 cursor-pointer">
+<div class="w-14 h-14 rounded-full p-[2px] ring-2 ring-secondary ring-offset-2 ring-offset-surface-container-lowest">
+<div class="w-full h-full rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Sleek boutique fashion atelier showing curated minimalist garments hanging on an industrial steel rack with soft neutral tones, airy high key aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEnkPvTp45pbPIBAhAzwBqcT_nOvq5GNM7fTgzuUQDy47vVF-M5w2taplmujmCuJnoi-2YDTNmlnPXgB-_TjngRhMVx1I7puB7tOCArOe_N2etSONBtZWk82bgWGZUSbccQnK7c76vwiECmkyTAbxFKUEMCG82kRNEML5cMG8AJr1OKN5TNYzmrorEQglEV9bY43LKwIPtnFrB-_lezaicN7kydXFkmtsJATtbut59Bn_3bdC1GEA5"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface truncate w-14 text-center">Studio V</span>
+</div>
+<!-- Status 4 (Viewed/Muted) -->
+<div class="flex flex-col items-center gap-1 flex-shrink-0 cursor-pointer opacity-70">
+<div class="w-14 h-14 rounded-full p-[2px] ring-2 ring-outline-variant/60 ring-offset-2 ring-offset-surface-container-lowest">
+<div class="w-full h-full rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Creative artist sketching in a minimalist notebook with cup of matcha latte on white ceramic surface, gentle daylight, muted calm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK2k7PBmdd6Hz8asM_FNflQ8DIBGWRA05HRBm2gV9We81iWcFzoUm681STsinJAVdP1f0XbQOQeCK9r53gMcHlfOblgjul-iyi0YG1ZgWpQdhtN6Dk1wlPiRnFRDU6RQ1PzKgnpe-9LcfIQit20SkbRgwI276a7ZjIxR8t2QXBhIJpE8hxdxTuoedwe-2aRJfTgyRAPdyxUtsZaekQT1tLpMWbpF1mYmR3SkysHRm69VZP35wzuT0m"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-14 text-center">Carlos B.</span>
+</div>
+</div>
+</section>
+<!-- Main Feed: Clean Ultra-Fast Message List -->
+<main class="flex-1 divide-y divide-outline-variant/20 bg-surface-container-lowest">
+<!-- Conversation 1: Commercial Client / Unread Messages -->
+<article class="flex items-center gap-3.5 px-margin py-3.5 hover:bg-surface-container-low transition-colors duration-150 cursor-pointer active:bg-surface-container">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Corporate headshot of an executive client sitting in a glass boardroom with soft natural backlighting, elegant attire, sharp focus and minimalist balance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4xUj4s5HeOcpHYnU2rhjcW59ZdVYvAX41xCur7g-MMNTJaIcdqKoCCFj8YbEcsmhtUP56xHX7FiOw828PTMjsdEDLJ28zdKk45bXqVq2vbB8jXk8OEvmu2ihN2FN0RjqOSnhrBaCV75z4F9_oG3e56algwXfKs-cJ7r5COt_81xNXOJR_yPTsuY1Stqr3p38wsTayONu8KpZjKXFbz8q8ukLYftfCwEAth2aL8YNpTbOr4F1wea7t"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary-fixed-dim border-2 border-surface-container-lowest rounded-full"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<div class="flex items-center gap-1 min-w-0">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Renato Silveira</h2>
+<!-- Commercial Badge / Verified Customer -->
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-[9px] font-label-sm leading-none flex-shrink-0">
+<span class="material-symbols-outlined text-[10px] leading-none" data-icon="verified">verified</span>
+                Cliente
+              </span>
+</div>
+<time class="font-body-sm text-body-sm text-primary font-semibold flex-shrink-0">11:42</time>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface font-medium truncate pr-2">
+              Você tem a nota fiscal do último lote aprovada?
+            </p>
+<span class="flex-shrink-0 min-w-[20px] h-5 px-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center">
+              2
+            </span>
+</div>
+</div>
+</article>
+<!-- Conversation 2: Commercial Supplier (Fornecedor) / Audio Message -->
+<article class="flex items-center gap-3.5 px-margin py-3.5 hover:bg-surface-container-low transition-colors duration-150 cursor-pointer active:bg-surface-container">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Artisanal ceramics supplier packaging handcrafted terracotta items in an airy workshop, clean natural daylight, bright contemporary atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtq-p2yu9mwPdHpRzgRuDKyq7PUucj5F3mAKdLYM4SnvymzuVatJRXnsvUlCny-6Y6R6FmLQkj-hOf8dLC5_bQtBfejBttlo9y4OtnGPmmCq0690Mkkz2BmaEqzJCpnj565fWKoAUWTr5Qz1kgeiWl_UdkDGF7foxQb9RORTIMJtdTPCGtPGWjbqOhNq6rDQgA_HGv7cXhohLBizEINKZscyhLH7n4sx1xFH2JM3R30ADWahuCLh49"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<div class="flex items-center gap-1 min-w-0">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Cerâmica &amp; Co. Distribuidora</h2>
+<!-- Commercial Badge / Supplier -->
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high text-secondary text-[9px] font-label-sm leading-none flex-shrink-0">
+<span class="material-symbols-outlined text-[10px] leading-none" data-icon="inventory_2">inventory_2</span>
+                Fornecedor
+              </span>
+</div>
+<time class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">09:15</time>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-body-md truncate pr-2">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="mic">mic</span>
+<span class="text-on-surface truncate">Mensagem de áudio (0:42)</span>
+</div>
+<span class="flex-shrink-0 min-w-[20px] h-5 px-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center">
+              1
+            </span>
+</div>
+</div>
+</article>
+<!-- Conversation 3: Personal Chat / Read Receipt Confirmation -->
+<article class="flex items-center gap-3.5 px-margin py-3.5 hover:bg-surface-container-low transition-colors duration-150 cursor-pointer active:bg-surface-container">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Candid outdoor portrait of a young woman with curly hair laughing softly against a subtle white concrete wall, bright sunshine and pristine light tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTXm_zGmErLqw4whS_Ft7wU-XtCG6J_xmuPk0H5t9E1rjMIJDX8Nn0Ni7kVWAi9bVKrzRzzsifRebAKaXmNIrkCyVlbH8KCY2o5bSl8qpBVKBdgaMaYpxUFgy1SY4Ti_7wrtDPdak8cdBwx23SLJpi8aUgfriYMCB6ocfF9OXWGOTP2d40w1TvjhD7miEFr_oOuZ2k7rEyVQUZyS9_25-jqI5GcqBi0VEzfMl3OadKCykvaPAUBHG_"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Beatriz Vasconcelos</h2>
+<time class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">Ontem</time>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-body-md truncate">
+<!-- Read Checkmark glowing Cyan according to Design tokens -->
+<span class="material-symbols-outlined text-[18px] text-secondary font-bold" data-icon="done_all">done_all</span>
+<span class="truncate">Combinado! Nos encontramos às 18h no café.</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Conversation 4: Local Community Group -->
+<article class="flex items-center gap-3.5 px-margin py-3.5 hover:bg-surface-container-low transition-colors duration-150 cursor-pointer active:bg-surface-container">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="groups">groups</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<div class="flex items-center gap-1 min-w-0">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Rede de Empreendedores Locais</h2>
+</div>
+<time class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">Ontem</time>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface-variant truncate pr-2">
+<span class="font-semibold text-on-surface">Lucas:</span> Compartilhei a pauta do evento no mural da cidade.
+            </p>
+<span class="flex-shrink-0 min-w-[20px] h-5 px-1.5 rounded-full bg-outline-variant/50 text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">
+              12
+            </span>
+</div>
+</div>
+</article>
+<!-- Conversation 5: Business Guide Store Interaction (Commercial Directory Card mini integration) -->
+<article class="flex items-center gap-3.5 px-margin py-3.5 hover:bg-surface-container-low transition-colors duration-150 cursor-pointer active:bg-surface-container">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Minimalist bakery pastry laboratory with freshly baked sourdough loaves on clean stainless steel counter, morning lighting, pure aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLhKYEbVC8fM4i9Ft7tcyO1XZx_dAT4r-EctN51dpqlGaJ1whJQwBnT3oBGpiIrIVQSvGOgRM4hWGlt-SypO6rn11OknHvRtA0b5citIhu9kew6dq05HKVHUnvI4L_rvP9QbU5iAVIS8OSS-zIcJMU4IWDGM853UXlxwbgoESohF89axgl3MU52oSQirTo1Ns1MHAiwviyHLo6A5u77_L_RSWoMG_ONWV9ryIiuKh7rl60U1_zJdqd"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<div class="flex items-center gap-1 min-w-0">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Padaria Artesanal Grão</h2>
+<span class="inline-flex items-center px-1 rounded bg-primary-fixed text-on-primary-fixed text-[9px] font-label-sm">
+                Guia
+              </span>
+</div>
+<time class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">Terça</time>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-body-md truncate">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="check">check</span>
+<span class="truncate">Pedido #4092 pronto para retirada no balcão!</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Conversation 6: Personal Family Chat -->
+<article class="flex items-center gap-3.5 px-margin py-3.5 hover:bg-surface-container-low transition-colors duration-150 cursor-pointer active:bg-surface-container">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of an elderly gentleman with kind eyes and silver hair smiling peacefully against warm indoor sunlight, very natural and authentic capture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcp5p-TubjFoc2OqbdF_HSaMkFe1aV1B08un3hLMd9Wcbk02-Qkjk74L3jT4EMvcRWaDLTnqYGdnOzPfARmZYwLn4znDcfqhsGgxoHNJe9QwP1ZI7m1pIIPMEmKeTup0kYCrZl66pN44h72y3RJzZnymVQaqfTth28JZbBMFxeTRyVF-KaQK9r-Cs9SRICzpqiZvxahqeQm9TVk7P4gLlOFiioDWFW3kEuzbomOQGKBQ-S7HV9n_SO"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface truncate">Pai</h2>
+<time class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">Segunda</time>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md text-body-md truncate">
+<span class="material-symbols-outlined text-[18px] text-secondary font-bold" data-icon="done_all">done_all</span>
+<span class="truncate">Foto recebida. Tudo bem por aqui também!</span>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Contextual Green Floating Action Button (FAB) for Nova Mensagem -->
+<button class="fixed bottom-20 right-[calc(50%-175px)] z-40 w-14 h-14 rounded-full bg-primary-container text-on-primary shadow-lg flex items-center justify-center hover:bg-primary active:scale-90 transition-transform duration-150" style="box-shadow: 0px 8px 16px -2px rgba(15, 118, 110, 0.35);" title="Nova Mensagem">
+<span class="material-symbols-outlined text-2xl" data-icon="chat">chat</span>
+</button>
+<!-- BottomNavBar (Derived from JSON Blueprint & Theme Tokens) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-[390px] mx-auto bg-surface-container-lowest/90 backdrop-blur-md shadow-md border-t border-outline-variant/30">
+<!-- Tab 1: Conversas (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="font-label-sm text-label-sm">Conversas</span>
+</a>
+<!-- Tab 2: Status -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="motion_photos_on">motion_photos_on</span>
+<span class="font-label-sm text-label-sm">Status</span>
+</a>
+<!-- Tab 3: Guia Local -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Guia Local</span>
+</a>
+<!-- Tab 4: Ajustes -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Ajustes</span>
+</a>
+</nav>
+</div>
+<!-- Interactive script for Mode switching (Personal <-> Professional) and filter chips -->
+<script>
+    const accountBtn = document.getElementById('account-toggle-btn');
+    const badgeLabel = document.getElementById('account-badge-label');
+    const badgeDot = document.getElementById('account-badge-dot');
+    
+    let isProfessional = false;
+
+    accountBtn.addEventListener('click', () => {
+      isProfessional = !isProfessional;
+      if (isProfessional) {
+        badgeLabel.textContent = 'Profissional';
+        badgeLabel.classList.remove('text-primary');
+        badgeLabel.classList.add('text-secondary');
+        
+        badgeDot.classList.remove('bg-primary-container');
+        badgeDot.classList.add('bg-secondary');
+      } else {
+        badgeLabel.textContent = 'Pessoal';
+        badgeLabel.classList.remove('text-secondary');
+        badgeLabel.classList.add('text-primary');
+        
+        badgeDot.classList.remove('bg-secondary');
+        badgeDot.classList.add('bg-primary-container');
+      }
+    });
+
+    // Filter Chips switching
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          t.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        tab.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        tab.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      });
+    });
+  </script>
+</body></html>

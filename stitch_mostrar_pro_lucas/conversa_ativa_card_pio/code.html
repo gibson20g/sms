@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Conversa - Pizzaria Bella Napoli</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#bdc9c6",
+            "secondary-container": "#5bb8fe",
+            "secondary-fixed": "#cce5ff",
+            "primary-fixed-dim": "#80d5cb",
+            "on-primary-container": "#a3faef",
+            "on-primary-fixed": "#00201d",
+            "tertiary": "#734700",
+            "on-primary-fixed-variant": "#00504a",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "outline": "#6e7977",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed-dim": "#93ccff",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary": "#006398",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container": "#eaedff",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#006a63",
+            "on-secondary-container": "#00476e",
+            "on-surface-variant": "#3e4947",
+            "inverse-primary": "#80d5cb",
+            "surface-variant": "#dae2fd",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed": "#001d31",
+            "on-tertiary": "#ffffff",
+            "primary": "#005c55",
+            "surface-container-highest": "#dae2fd",
+            "background": "#faf8ff",
+            "on-background": "#131b2e",
+            "primary-fixed": "#9cf2e8",
+            "inverse-surface": "#283044",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "error": "#ba1a1a",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-container": "#ffe6cc",
+            "primary-container": "#0f766e",
+            "surface-bright": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "tertiary-container": "#945d00",
+            "on-secondary-fixed-variant": "#004b73"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Subtle custom pattern for wallpaper */
+    .chat-wallpaper {
+      background-color: #faf8ff;
+      background-image: radial-gradient(#6e7977 0.65px, transparent 0.65px);
+      background-size: 14px 14px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim font-body-md text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Container (Max 420px for high fidelity mobile screen simulation) -->
+<div class="w-full max-w-[420px] bg-background min-h-screen flex flex-col shadow-2xl relative overflow-hidden">
+<!-- Top Bar: Task Focused Header (Suppresses bottom global shell, focused linear task) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-margin py-space-sm shadow-sm flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<!-- Back action -->
+<button aria-label="Voltar" class="p-1 rounded-full text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Avatar & Verified Badge -->
+<div class="relative flex-shrink-0 cursor-pointer">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/40 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean top-down culinary portrait of artisanal wood-fired Neapolitan pizza with melted bufala mozzarella, fresh fragrant basil leaves, and golden blistered crust on fine light ceramic stone, illuminated by bright daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACZiaoB7gbSJt63LpaZEotyv3T3MHrPycAqfqCjTKy1emy12LgM5sEuSfbLsSKiR8lpBrBpQPDtuIyCSlsNz-DDuZKcEd5_vhKshl7fAitRfO9_VXWLfug8kEvQ2qJEgC-9h0_g7AteEDubzrZdWhEqLNrdZOav_q3lixwxYn2hxSBCchnvASgqvlajiMVwGJle0La0tBkLsFnTbUIaXR8u4AhGkMUWERg5XSOX6E4eMW08mL36enC"/>
+</div>
+<!-- Online status dot -->
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<!-- Name, Category Tag & Presence -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Pizzaria Bella Napoli</span>
+<span class="material-symbols-outlined material-symbols-fill text-secondary text-[16px]" title="Comercial Verificado">verified</span>
+</div>
+<div class="flex items-center gap-1 text-body-sm font-body-sm text-on-surface-variant">
+<span class="inline-flex items-center px-1.5 py-0.2 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm rounded">Comercial</span>
+<span class="text-outline">•</span>
+<span class="text-primary font-label-md text-label-md">Online agora</span>
+</div>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-0.5 text-on-surface-variant flex-shrink-0">
+<button aria-label="Chamada de voz" class="p-2 rounded-full hover:bg-surface-container text-primary active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">call</span>
+</button>
+<button aria-label="Mais opções" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Chat Area Canvas -->
+<main class="flex-1 overflow-y-auto px-margin py-space-md chat-wallpaper flex flex-col gap-space-md pb-24">
+<!-- Date Pill Badge -->
+<div class="flex justify-center my-space-xs">
+<span class="bg-surface-container-highest/80 backdrop-blur-xs text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full shadow-xs">
+          Hoje
+        </span>
+</div>
+<!-- Outbound Message (Client inquiring) -->
+<div class="flex flex-col items-end pl-12 space-y-1">
+<div class="bg-primary-container text-on-primary rounded-2xl rounded-tr-xs p-3 shadow-xs">
+<p class="font-body-md text-body-md leading-relaxed">
+            Boa noite! Gostaria de ver as opções de sabores especiais disponíveis para entrega hoje.
+          </p>
+<div class="flex items-center justify-end gap-1 mt-1">
+<span class="text-[10px] text-on-primary/70 font-label-sm">19:42</span>
+<span class="material-symbols-outlined text-[15px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+<!-- Inbound Message (Business Greeting) -->
+<div class="flex flex-col items-start pr-12 space-y-1">
+<div class="bg-surface-container-lowest text-on-surface rounded-2xl rounded-tl-xs p-3 border border-outline-variant/30 shadow-xs">
+<div class="flex items-center gap-1.5 mb-1 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">storefront</span>
+<span>Atendimento Automático</span>
+</div>
+<p class="font-body-md text-body-md leading-relaxed">
+            Olá! Que bom ter você aqui na Bella Napoli. Nosso forno à lenha já está aquecido a todo vapor! 🍕
+          </p>
+<div class="flex items-center justify-end mt-1">
+<span class="text-[10px] text-outline font-label-sm">19:43</span>
+</div>
+</div>
+</div>
+<!-- Special Rich Commercial Card: Encarte / Cardápio Rápido -->
+<div class="flex flex-col items-start max-w-[320px] w-full">
+<div class="bg-surface-container-lowest rounded-2xl rounded-tl-xs border border-outline-variant/40 shadow-sm overflow-hidden w-full">
+<!-- Compact Food Banner Image -->
+<div class="relative h-36 w-full bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="High quality overhead view of a gourmet pizza board displaying two slices of Margherita and Truffled Mushroom pizza garnished with fresh herbs and spices on bright rustic slate, illuminated with soft warm studio food lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUZdTBNBDlBAZ6Kdvx013GeSMLXx2iI8e1qKCv7-UPXlQQn6X7R61EWjwCzzFDgbGAEQhGCjvLRWUgck1vdqUDSerzM4K4futpCcLp5JLJ-nEUtcyS3oWxMe6ay6MJPP-iozF5Pg-jmb5bQWm5g874KY4ZP_GYUHVZ-s5Tz11LG50Y_xgAmHpQbPi9Kc6I04if5FAK_S_bz42IOZOvXwl0YtIIphMNR9MCgfRDvjOWFtcMYpL0WuaX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 flex justify-between items-end">
+<div>
+<span class="bg-primary text-on-primary text-[10px] font-label-sm px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                  Menu do Dia
+                </span>
+<h4 class="text-surface-container-lowest font-headline-sm text-headline-sm font-bold mt-1 leading-none drop-shadow-sm">
+                  Edição Noturna • Forno a Lenha
+                </h4>
+</div>
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-[11px] px-2 py-0.5 rounded shadow-xs">
+                PDF 1.4 MB
+              </span>
+</div>
+</div>
+<!-- Card Description & Highlights -->
+<div class="p-3 space-y-2">
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+              Confira nossos 18 sabores artesanais, bordas recheadas e combos familiares com frete promocional.
+            </p>
+<!-- Quick highlights pills -->
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="inline-flex items-center text-on-secondary-container bg-secondary-fixed text-[11px] font-label-sm px-2 py-0.5 rounded-full">
+                🔥 Mais Pedida: Burrata Trufada
+              </span>
+<span class="inline-flex items-center text-tertiary bg-tertiary-fixed text-[11px] font-label-sm px-2 py-0.5 rounded-full">
+                ⏱️ 35-45 min entrega
+              </span>
+</div>
+<!-- Action Buttons for the Card -->
+<div class="pt-2 grid grid-cols-2 gap-2">
+<button class="w-full py-2 px-2 bg-surface-container text-on-surface font-label-md text-label-md rounded-xl hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]">open_in_full</span>
+<span>Ampliar</span>
+</button>
+<button class="w-full py-2 px-2 bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:bg-primary-container transition-colors flex items-center justify-center gap-1 shadow-sm active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span>Fazer Pedido</span>
+</button>
+</div>
+</div>
+<!-- Inbound Card Timestamp -->
+<div class="px-3 pb-2 pt-0 flex justify-end">
+<span class="text-[10px] text-outline font-label-sm">19:43</span>
+</div>
+</div>
+</div>
+<!-- Outbound Message (Client selecting) -->
+<div class="flex flex-col items-end pl-12 space-y-1">
+<div class="bg-primary-container text-on-primary rounded-2xl rounded-tr-xs p-3 shadow-xs">
+<p class="font-body-md text-body-md leading-relaxed">
+            Perfeito! Vou querer 1 Burrata Trufada Grande com massa fina e uma Coca Zero.
+          </p>
+<div class="flex items-center justify-end gap-1 mt-1">
+<span class="text-[10px] text-on-primary/70 font-label-sm">19:45</span>
+<span class="material-symbols-outlined text-[15px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+<!-- Inbound Business Confirmation & Quick Action -->
+<div class="flex flex-col items-start pr-12 space-y-1">
+<div class="bg-surface-container-lowest text-on-surface rounded-2xl rounded-tl-xs p-3 border border-outline-variant/30 shadow-xs">
+<p class="font-body-md text-body-md leading-relaxed">
+            Excelente escolha! Seu pedido foi registrado. O total ficou em <span class="font-bold text-primary">R$ 84,90</span>. Deseja pagar via Pix com 5% de desconto?
+          </p>
+<div class="mt-2.5 flex items-center gap-2">
+<button class="px-3 py-1.5 bg-secondary-fixed text-on-secondary-fixed rounded-lg font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_2</span>
+<span>Chave Pix</span>
+</button>
+<button class="px-3 py-1.5 bg-surface-container text-on-surface rounded-lg font-label-md text-label-md active:scale-95 transition-all" type="button">
+              Cartão / Dinheiro
+            </button>
+</div>
+<div class="flex items-center justify-end mt-1.5">
+<span class="text-[10px] text-outline font-label-sm">19:46</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Message Input Dock -->
+<footer class="sticky bottom-0 left-0 w-full z-40 bg-surface-container-lowest/95 backdrop-blur-md px-margin py-space-sm border-t border-outline-variant/20 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<!-- Action: Attachment (+) -->
+<button aria-label="Adicionar anexo" class="w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">add_circle</span>
+</button>
+<!-- Input Pill Container -->
+<div class="flex-1 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex items-center px-3 py-1.5 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<!-- Emoji / Emoticons -->
+<button aria-label="Inserir emoji" class="text-on-surface-variant hover:text-on-surface mr-1.5 active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">mood</span>
+</button>
+<!-- Native Text Input -->
+<input class="w-full bg-transparent border-none p-0 text-on-surface font-body-md text-body-md placeholder:text-outline focus:ring-0 focus:outline-none" placeholder="Mensagem..." type="text"/>
+<!-- Quick Camera/Media Trigger -->
+<button aria-label="Enviar foto" class="text-on-surface-variant hover:text-primary ml-1.5 active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</button>
+</div>
+<!-- Audio / Microphone Button (Instant Send Alternative) -->
+<button aria-label="Gravar áudio" class="w-10 h-10 flex-shrink-0 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-md active:scale-90 transition-all hover:bg-primary-container" type="button">
+<span class="material-symbols-outlined text-[22px]">mic</span>
+</button>
+</div>
+</footer>
+</div>
+</body></html>

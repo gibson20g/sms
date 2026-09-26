@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guia Local - Mensagens</title>
+<!-- Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#bdc9c6",
+            "secondary-container": "#5bb8fe",
+            "secondary-fixed": "#cce5ff",
+            "primary-fixed-dim": "#80d5cb",
+            "on-primary-container": "#a3faef",
+            "on-primary-fixed": "#00201d",
+            "tertiary": "#734700",
+            "on-primary-fixed-variant": "#00504a",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "outline": "#6e7977",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed-dim": "#93ccff",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary": "#006398",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container": "#eaedff",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#006a63",
+            "on-secondary-container": "#00476e",
+            "on-surface-variant": "#3e4947",
+            "inverse-primary": "#80d5cb",
+            "surface-variant": "#dae2fd",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed": "#001d31",
+            "on-tertiary": "#ffffff",
+            "primary": "#005c55",
+            "surface-container-highest": "#dae2fd",
+            "background": "#faf8ff",
+            "on-background": "#131b2e",
+            "primary-fixed": "#9cf2e8",
+            "inverse-surface": "#283044",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "error": "#ba1a1a",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-container": "#ffe6cc",
+            "primary-container": "#0f766e",
+            "surface-bright": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "tertiary-container": "#945d00",
+            "on-secondary-fixed-variant": "#004b73"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex justify-center min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- Mobile Container (390px Canvas) -->
+<main class="relative w-full max-w-[390px] h-[844px] max-h-screen overflow-hidden bg-surface-container-low flex flex-col shadow-2xl">
+<!-- Interactive Styled Background Map -->
+<div class="absolute inset-0 z-0 overflow-hidden bg-[#e9ecef]">
+<!-- Stylized Vector Roads / Urban Grid -->
+<svg class="absolute inset-0 w-full h-full opacity-60" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="120" id="urban-grid" patternunits="userSpaceOnUse" width="120">
+<path d="M 0,20 L 120,20 M 0,70 L 120,70 M 35,0 L 35,120 M 90,0 L 90,120" stroke="#d5dde5" stroke-width="2.5"></path>
+<path d="M 0,45 Q 60,60 120,40 M 10,0 Q 40,80 70,120" fill="none" stroke="#c4d1de" stroke-width="4"></path>
+</pattern>
+</defs>
+<rect fill="#edf2f7" height="100%" width="100%"></rect>
+<!-- River / Water canal accent -->
+<path d="M -20,180 C 80,160 120,280 220,240 C 300,200 340,320 420,290 L 420,380 L -20,380 Z" fill="#d9ecf8"></path>
+<!-- Street patterns -->
+<rect fill="url(#urban-grid)" height="100%" width="100%"></rect>
+<!-- Park Zones -->
+<rect fill="#e2ede5" height="90" rx="16" stroke="#c7decb" stroke-width="1.5" width="110" x="220" y="70"></rect>
+<rect fill="#e2ede5" height="120" rx="20" stroke="#c7decb" stroke-width="1.5" width="90" x="40" y="380"></rect>
+</svg>
+<!-- Map Markers & Interactive Local Spots -->
+<!-- Marker 1: Padaria Artesanal Pin -->
+<div class="absolute top-[220px] left-[70px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
+<div class="bg-surface-container-lowest text-primary px-space-xs py-[2px] rounded-full shadow-md border border-outline-variant/30 flex items-center gap-1 mb-1 scale-95 transition-transform group-hover:scale-105">
+<span class="font-label-sm text-label-sm text-on-surface">Artisan Pão</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg border-2 border-surface-container-lowest active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">bakery_dining</span>
+</div>
+<div class="w-1.5 h-1.5 bg-primary rounded-full mt-0.5 opacity-80"></div>
+</div>
+<!-- Marker 2: Cantina Bella (Selected / Prominent) -->
+<div class="absolute top-[290px] right-[65px] translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer z-20">
+<div class="bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-md border border-secondary/40 flex items-center gap-1 mb-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Forno &amp; Massa</span>
+<span class="font-label-sm text-label-sm text-secondary">0.4km</span>
+</div>
+<div class="relative">
+<div class="absolute -inset-1 rounded-full bg-secondary-fixed opacity-60 animate-ping"></div>
+<div class="relative w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[20px]">local_pizza</span>
+</div>
+</div>
+<div class="w-2 h-2 bg-secondary rounded-full mt-0.5"></div>
+</div>
+<!-- Marker 3: Drogaria Central -->
+<div class="absolute top-[160px] right-[120px] flex flex-col items-center cursor-pointer z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-tertiary-container flex items-center justify-center shadow-md border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px]">local_pharmacy</span>
+</div>
+</div>
+<!-- Marker 4: Café da Praça -->
+<div class="absolute top-[370px] left-[170px] flex flex-col items-center cursor-pointer z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shadow-md border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px]">coffee</span>
+</div>
+</div>
+<!-- User Current Location Dot -->
+<div class="absolute top-[330px] left-[110px] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+<div class="w-8 h-8 bg-secondary/20 rounded-full animate-pulse absolute"></div>
+<div class="w-3.5 h-3.5 bg-secondary rounded-full border-2 border-surface-container-lowest shadow-sm z-10"></div>
+</div>
+<!-- Floating Map Control Button (GPS Recentering) -->
+<div class="absolute top-[190px] right-margin z-20">
+<button aria-label="Centralizar no meu local" class="w-10 h-10 rounded-full bg-surface-container-lowest text-on-surface shadow-md border border-outline-variant/30 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px] text-primary">my_location</span>
+</button>
+</div>
+</div>
+<!-- TOP SECTION: Shared Component Header & Interactive Filter Cluster -->
+<header class="relative z-30 w-full flex flex-col pt-space-xs bg-surface-container-lowest/85 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<!-- TopAppBar Shared Component Anchor execution -->
+<div class="flex justify-between items-center w-full px-margin h-14">
+<!-- Leading Icon: switch_account from JSON -->
+<button aria-label="Alternar Conta" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[22px]">switch_account</span>
+</button>
+<!-- Brand Headline -->
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">Guia Local</h1>
+</div>
+<!-- Trailing Icon: map from JSON -->
+<button aria-label="Ver Mapa Cheio" class="w-9 h-9 rounded-full flex items-center justify-center text-primary hover:bg-surface-container transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[22px]">map</span>
+</button>
+</div>
+<!-- Integrated Search Input -->
+<div class="px-margin pb-space-sm">
+<div class="relative flex items-center w-full bg-surface-container-low rounded-xl px-space-md py-space-xs border border-outline-variant/40 focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
+<input class="w-full bg-transparent border-0 p-0 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:ring-0 focus:outline-none" placeholder="Buscar comércios, pratos ou serviços..." type="text"/>
+<button aria-label="Filtros avançados" class="text-outline hover:text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Micro Chips Categories -->
+<nav class="flex items-center gap-2 px-margin pb-space-md overflow-x-auto hide-scrollbar text-nowrap">
+<!-- Active Chip: Alimentação -->
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md active:scale-95 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[15px]">restaurant</span>
+<span>Alimentação</span>
+</button>
+<!-- Category: Serviços -->
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-outline-variant/30 hover:bg-surface-container-high active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[15px]">handyman</span>
+<span>Serviços</span>
+</button>
+<!-- Category: Saúde -->
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-outline-variant/30 hover:bg-surface-container-high active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[15px]">medical_services</span>
+<span>Saúde</span>
+</button>
+<!-- Category: Moda -->
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-outline-variant/30 hover:bg-surface-container-high active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[15px]">checkroom</span>
+<span>Moda</span>
+</button>
+</nav>
+</header>
+<!-- SPACER for Map Visibility -->
+<div class="flex-1 pointer-events-none"></div>
+<!-- BOTTOM SHEET / SLIDING DRAWER: Vitrine de Comércios -->
+<section class="relative z-30 flex flex-col w-full max-h-[445px] bg-surface-container-lowest rounded-t-[24px] shadow-[0px_-8px_24px_rgba(15,23,42,0.08)] border-t border-outline-variant/20 mb-[62px]">
+<!-- Drawer Pull Handle & Sub-Header -->
+<div class="w-full flex flex-col items-center pt-2.5 pb-2 px-margin shrink-0">
+<div class="w-10 h-1 bg-outline-variant/60 rounded-full mb-2"></div>
+<div class="w-full flex items-center justify-between">
+<div class="flex items-baseline gap-2">
+<h2 class="font-label-lg text-label-lg text-on-surface font-bold">Comércios Próximos</h2>
+<span class="font-body-sm text-body-sm text-outline">14 encontrados</span>
+</div>
+<button class="flex items-center gap-0.5 font-label-md text-label-md text-primary font-semibold hover:underline">
+<span>Ordenar</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Commercial Directory Cards -->
+<div class="overflow-y-auto px-margin space-y-space-md pb-6 pt-1">
+<!-- Card 1: Cantina Bella (Pizzaria & Massas) -->
+<article class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-xs hover:border-secondary/40 transition-colors">
+<div class="flex gap-3 items-start">
+<!-- Business Thumbnail -->
+<div class="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of a rustic artisanal wood fired pizza topped with melted mozzarella, fresh basil, and ripe cherry tomatoes on a dark slate surface, featuring warm ambient light-mode commercial photography with soft depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUPiUh51lzVrMdMSgjFH0YZqu19My5UjOFSYR4sM2XTEMwZ_oyd3ncddFHfVaqnHnhunu9SRSU7mUyGvdX_zjCMp1hO3tK0BVnT75QMquu6g-GuFoY6r1ian9lsNUEPhe4OulN_WjNn76rkBcW37U8p4_fXQcFQ4IZnlpxS-mX8eP3B4qHECP_LwGbPQ-aF4HyWk39DusNACgZUpbgDOsuaZ9ItPnOpxo8h6XUSZsjP11JKeTzTgUu"/>
+<span class="absolute bottom-1 right-1 bg-surface-container-lowest/90 backdrop-blur-xs text-[10px] px-1 py-0.2 rounded font-label-sm font-bold text-on-surface">★ 4.9</span>
+</div>
+<!-- Business Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Forno &amp; Pasta Artesanal</h3>
+<span class="shrink-0 font-label-sm text-label-sm font-bold text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded-full">Aberto agora</span>
+</div>
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-0.5">
+<span>Pizzaria</span>
+<span>•</span>
+<span class="text-secondary font-medium">0.4 km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">
+                Rua das Flores, 142 • Centro
+              </p>
+</div>
+</div>
+<!-- Quick Catalog / Encarte Rápido Preview Strip -->
+<div class="mt-2.5 pt-2 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-md overflow-hidden bg-surface-container shrink-0 border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Digital flat-lay promotional menu card with crisp typography showing pizza combos, prices, and high key bright photography with teal and cyan clean brand accents suitable for mobile catalog browsing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRw67mS2VoRMeoSb5yKKF93UU_j9WxhULf2oP2DrUposkrnXpBcVi2CTDWeFU7w_skAtUaC6nAWdkjsRYdjquLAdZ2rvwiXtoagv0wl8UvD5JvPiq1iZoLT4dpUgI052YhBoDr7dTvCXLPmJn8yipnJkJpq1iM9mV1az_iP3fzNfgxMMYeU1v4kGEwEn6vwgO4uP_0y9sF5be_HQSA1E0olacQLArjDCGozuP2brJKfBvplrdFIhUt"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Cardápio &amp; Ofertas do Dia</span>
+<span class="font-body-sm text-body-sm text-outline">Toque para ver encarte rápido</span>
+</div>
+</div>
+<!-- Direct Chat Action -->
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm active:scale-90 transition-transform" href="#chat-forno">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Chamar</span>
+</a>
+</div>
+</article>
+<!-- Card 2: Artisan Pão & Café -->
+<article class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-xs hover:border-primary/40 transition-colors">
+<div class="flex gap-3 items-start">
+<!-- Business Thumbnail -->
+<div class="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cozy modern bakery display counter showcasing golden brown sourdough bread loaves, flaky croissants, and specialty filter coffee in bright daylight studio styling with natural wood and clean white surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfqlUIQWaDjRsuOwe0QObBufN-5p2AGwGX7mZMng0y2j-X4keo5ycqhnpq0iz-kBihNysheGJRrfwopVg6lcfB9FwIOEM_pQEOcdBVl6g6UiRPQvYlTIuWQT5AtjITZ4GZaFu1Tx1Dgs15dV21kE7K_Nc1mrkja9a05DT-rkOSi23nY8Gr84Ifl1a3ePsCLzqnRqpN_dw4EqT5pLuMX3iogPTs78Sx3JP5JHwpuhplY-w88G13UkDj"/>
+<span class="absolute bottom-1 right-1 bg-surface-container-lowest/90 backdrop-blur-xs text-[10px] px-1 py-0.2 rounded font-label-sm font-bold text-on-surface">★ 4.8</span>
+</div>
+<!-- Business Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Padaria Artisan Pão</h3>
+<span class="shrink-0 font-label-sm text-label-sm font-bold text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded-full">Aberto agora</span>
+</div>
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-0.5">
+<span>Padaria &amp; Café</span>
+<span>•</span>
+<span class="text-secondary font-medium">0.8 km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">
+                Av. Paulista, 880 • Bela Vista
+              </p>
+</div>
+</div>
+<!-- Quick Catalog / Encarte Rápido Preview Strip -->
+<div class="mt-2.5 pt-2 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-md overflow-hidden bg-surface-container shrink-0 border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Compact digital flyer graphic displaying fresh bakery daily specials and breakfast combos with high legibility, clean layout, and light minimal aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRRngCtXnuM2FI-GOprslK0Us4ejRFX4iTOPClJcuBUjFHUhzK4G20ktRwH0gcP7IeNn28DTKok3WxFSY0MgPpSKkCXPIKMr6W1Pe9zplfceMLqV1AXN1djojtALprVS_M8oQl1KKszIUoFr61bGq5oiDGWwnxTmV0fc3AmMPxW00qRsY2qzvPmB7VnDigGVgDFSDytC6e-lNbEMTem32PjBh-XZLY1GbgQrQgQGyTjqmywaxCZ6P2"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Tabela de Fornadas</span>
+<span class="font-body-sm text-body-sm text-outline">Pão quente às 17h30</span>
+</div>
+</div>
+<!-- Direct Chat Action -->
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm active:scale-90 transition-transform" href="#chat-artisan">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Chamar</span>
+</a>
+</div>
+</article>
+<!-- Card 3: Drogaria FarmaVida -->
+<article class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-xs hover:border-primary/40 transition-colors">
+<div class="flex gap-3 items-start">
+<!-- Business Thumbnail -->
+<div class="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Bright and modern pharmacy storefront with clean glass shelves, well arranged wellness supplements and cosmetics under crisp white lighting with hygienic professional blue and green tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm7V1iZ7WYBESpa0CWD6SvcUtMzP131f7yMBjTpr4Z2w93nDMYxg_xsX0Ase477EBQHrSO-UcsdB6EaOYTncqFUgmHwywgo_9zF_OFMBYJnKBhlAeVzxFonf3H3GpcVpz4lRa9r0MPey55VlgzEqE26WZvOFFDAYdICD08VBHgdFx7jA5Q0U1UPIkGXpC0drPwzKmS4NosB9fbsmFvGRzdJZhdYfxtXnIrkQGtckoD6_H7lMvsS_p1"/>
+<span class="absolute bottom-1 right-1 bg-surface-container-lowest/90 backdrop-blur-xs text-[10px] px-1 py-0.2 rounded font-label-sm font-bold text-on-surface">★ 4.7</span>
+</div>
+<!-- Business Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Drogaria FarmaVida</h3>
+<span class="shrink-0 font-label-sm text-label-sm font-bold text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded-full">Plantão 24h</span>
+</div>
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-0.5">
+<span>Farmácia &amp; Saúde</span>
+<span>•</span>
+<span class="text-secondary font-medium">1.1 km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">
+                Rua Augusta, 510 • Consolação
+              </p>
+</div>
+</div>
+<!-- Quick Catalog / Encarte Rápido Preview Strip -->
+<div class="mt-2.5 pt-2 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-md overflow-hidden bg-surface-container shrink-0 border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Digital medicine promotional circular with discounts on vitamins, cosmetics, and essential care products presented on an organized light grid." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8dV2BhJffx1KTk37v6TgwgbpnIbSSa-Q_xNLryH6bfYa84gGyl2LC0_PWXUiDpHaoJ8piu0cYefEN80Ykt-j5DJhyRx7-sXpGMsZZuoBa-zieqd_-Mt3UlNSkkBUkVpqi7pTDJNHt_Ppho7vqV9191CFLPDve0jN4Trzv6VFT9ygCZh0OxgMeG3fXMwdeEi-60_6X_rLxovX75tfk3-noZOdNVGxQj6FNH0Diec4PzOEEwHU6NQl-"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Encarte de Cuidados</span>
+<span class="font-body-sm text-body-sm text-outline">Envie sua receita pelo chat</span>
+</div>
+</div>
+<!-- Direct Chat Action -->
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm active:scale-90 transition-transform" href="#chat-farma">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Chamar</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- BOTTOM NAVIGATION BAR (Shared Component Execution) -->
+<!-- Current active: "Guia Local" (Exact match for this page) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-md mx-auto bg-surface-container-lowest/90 backdrop-blur-md shadow-md border-t border-outline-variant/30">
+<!-- Conversas (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span class="font-label-sm text-label-sm mt-0.5">Conversas</span>
+</button>
+<!-- Status (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90">
+<span class="material-symbols-outlined text-[20px]">motion_photos_on</span>
+<span class="font-label-sm text-label-sm mt-0.5">Status</span>
+</button>
+<!-- Guia Local (ACTIVE TAB: exactly maps to Guia Local) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm mt-0.5 font-bold">Guia Local</span>
+</button>
+<!-- Ajustes (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-sm text-label-sm mt-0.5">Ajustes</span>
+</button>
+</nav>
+</main>
+</body></html>

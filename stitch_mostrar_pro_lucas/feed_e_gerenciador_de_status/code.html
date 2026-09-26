@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feed de Status &amp; Stories - Mensagens</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "surface-container": "#eaedff",
+            "secondary-container": "#5bb8fe",
+            "secondary-fixed": "#cce5ff",
+            "error-container": "#ffdad6",
+            "outline": "#6e7977",
+            "on-error-container": "#93000a",
+            "tertiary": "#734700",
+            "tertiary-container": "#945d00",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-highest": "#dae2fd",
+            "secondary": "#006398",
+            "on-primary-fixed-variant": "#00504a",
+            "on-tertiary": "#ffffff",
+            "primary": "#005c55",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed-dim": "#93ccff",
+            "background": "#faf8ff",
+            "on-secondary-container": "#00476e",
+            "outline-variant": "#bdc9c6",
+            "tertiary-fixed-dim": "#ffb95f",
+            "primary-fixed-dim": "#80d5cb",
+            "on-surface-variant": "#3e4947",
+            "surface-variant": "#dae2fd",
+            "on-background": "#131b2e",
+            "primary-fixed": "#9cf2e8",
+            "on-surface": "#131b2e",
+            "surface-tint": "#006a63",
+            "on-secondary-fixed-variant": "#004b73",
+            "inverse-primary": "#80d5cb",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffddb8",
+            "surface-dim": "#d2d9f4",
+            "surface-bright": "#faf8ff",
+            "inverse-on-surface": "#eef0ff",
+            "on-tertiary-container": "#ffe6cc",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-fixed": "#001d31",
+            "primary-container": "#0f766e",
+            "on-primary-fixed": "#00201d",
+            "on-primary": "#ffffff",
+            "on-error": "#ffffff",
+            "surface": "#faf8ff",
+            "on-primary-container": "#a3faef"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Application Shell Wrapper -->
+<div class="w-full max-w-md min-h-screen bg-surface-container-lowest flex flex-col relative pb-24 shadow-xl">
+<!-- Top App Bar (Header Executed to Specification) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-margin h-14">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Alternar Modo" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-primary">
+<span class="material-symbols-outlined text-headline-sm" data-icon="switch_account">switch_account</span>
+</button>
+<h1 class="text-headline-sm font-headline-sm text-on-surface tracking-tight font-extrabold">Status</h1>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Pesquisar" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Guia no Mapa" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-primary">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</button>
+<button aria-label="Configurações de Privacidade" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-150 active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col px-margin pt-space-md space-y-space-lg">
+<!-- Action Dual-Hero Buttons (Side-by-Side Highlighted) -->
+<section class="grid grid-cols-2 gap-space-sm">
+<!-- Button 1: Emerald Primary Color -->
+<button class="flex items-center justify-center gap-space-xs px-space-md py-space-md bg-primary-container text-on-primary rounded-xl shadow-sm hover:brightness-105 active:scale-95 transition-all text-left">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-headline-sm" data-icon="add_a_photo" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-label-md font-label-md leading-tight text-on-primary font-bold truncate">+ Criar Novo</span>
+<span class="text-label-sm font-label-sm text-on-primary-container opacity-90 truncate">Foto ou Vídeo</span>
+</div>
+</button>
+<!-- Button 2: Vibrant Cyan / Secondary Container Contrast -->
+<button class="flex items-center justify-center gap-space-xs px-space-md py-space-md bg-secondary text-on-secondary rounded-xl shadow-sm hover:brightness-105 active:scale-95 transition-all text-left relative overflow-hidden">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-headline-sm" data-icon="insights" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1">
+<span class="text-label-md font-label-md leading-tight text-on-secondary font-bold truncate">Meus Status</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-1.5 py-0.2 rounded-full leading-none">3</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary-fixed-dim truncate">142 visualizações</span>
+</div>
+</button>
+</section>
+<!-- Category Filter Pills -->
+<nav aria-label="Filtros de Stories" class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-space-xs">
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-xs">
+          Todos
+        </button>
+<button class="shrink-0 flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-body-sm text-secondary" data-icon="storefront">storefront</span>
+          Comércios da Cidade (Públicos)
+        </button>
+<button class="shrink-0 flex items-center gap-1 px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-body-sm text-primary" data-icon="lock">lock</span>
+          Amigos &amp; Família (Pessoais)
+        </button>
+<button class="shrink-0 px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
+          Recentes
+        </button>
+</nav>
+<!-- Section: "Meu Status" Compact Horizontal Card -->
+<section class="bg-surface-container-low rounded-xl p-space-md flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-space-md">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden bg-surface-container shrink-0 border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A modern professional portrait of an entrepreneur standing inside a high-end minimalist coffee shop with soft natural rim lighting and gentle turquoise accents. The image showcases contemporary urban lifestyle and personal branding aesthetics with refined lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTyGLeqnASoqSlfWSp2LdY26bPfxaAzBEbvVBOrMxHfTjWCTuPJMp560BC2wnC2MY17nS8WHLmEdJwTB2Hj-7ZfJveMoyj02lSM9f_h8YwiO54JuhatBFQ6_XnDpkcyNRFyfoolCU0HvJFDL2mJiOkvSMYgSv5AAsqrGplhPEh24iUzdsTN-wnobc_vmtlAFpPBIv0CqfLktSwFLrs4lsp70flW2EnhQRYLsqnxaawDqjqL1dRB-ZN"/>
+<span class="absolute bottom-0 right-0 bg-primary text-on-primary w-5 h-5 rounded-tl-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-label-sm" data-icon="add">add</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="text-body-md font-label-lg text-on-surface font-bold">Meu Status</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-label-md text-primary" data-icon="visibility">visibility</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">142 views • Há 45 min</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Ver Métricas" class="w-9 h-9 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-xs hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-headline-sm" data-icon="analytics">analytics</span>
+</button>
+<button aria-label="Mais opções" class="w-9 h-9 rounded-lg bg-surface-container-lowest text-on-surface-variant flex items-center justify-center shadow-xs hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-headline-sm" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</section>
+<!-- Main Feed: Recent Updates (Square/Tile Grid Pattern) -->
+<section class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<h2 class="text-label-lg font-label-lg text-on-surface font-bold">Atualizações Recentes</h2>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">8 novas histórias</span>
+</div>
+<!-- 2-Column Square / 4:5 Tile Grid -->
+<div class="grid grid-cols-2 gap-space-md">
+<!-- Card 1: Commercial (Store/Public) - Unread (Cyan/Secondary Ring) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm p-0.5 bg-secondary hover:shadow-md transition-all active:scale-[0.98] cursor-pointer">
+<div class="w-full h-full rounded-[10px] overflow-hidden relative flex flex-col justify-between p-space-sm bg-surface-container">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Artisanal sourdough bakery showcasing freshly baked rustic bread with golden brown crusts and gourmet pastries displayed in a warm, inviting, minimalist modern store bathed in morning golden sunlight with clean cyan visual accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLBi7QPNxbJQNu_L3YT6YvYKxMSYPxkMDx8Kw6AC53Vf5xL6K1IfWloHv0IdmUCKAwpPlJnOoCGB9MMj21-uB7ZxK8X8W20LiilQwn0ghcK3k3sPz4lyAPqmDMrmzYKKL2k3V-eHdxCSUiVsZ9eHzh1ZWIXvcMlZWzBwy3wrBW9jCOQ9tz1P2eYUONpiSuVVfblR0Fw2aivbzZZlThF9d6nR-dKnrixDGU_FX4qpXUtSeiqRVxlTaC"/>
+<!-- Subtle base gradient overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/30"></div>
+<!-- Top Row: Badge & Header Avatar -->
+<div class="relative z-10 flex items-start justify-between">
+<div class="w-8 h-8 rounded-full ring-2 ring-secondary overflow-hidden bg-surface-container-lowest shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Modern logo insignia of an artisanal bakery with clean typography and warm slate background in crisp minimalist light design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeSzzZ7xNUDfTiBKO24SvjFbCEch4P-6lxu5BGBpWmxhmvj2U4HZEuQGr1X_aqr-f28KyKTxraS6MN7hmYOLP0Xjw-mrAgYwBKm4D5-i0NzMK8vSMH-l_qUzYzDdlu5alkzj1t-d4olCV7IkPTcsM2B-Yah4joJx4JiJfD99-pyM-83Atfjg9z3iNhBc-8BpJeSjMpgfLbPMNtO75unpyejcosuowqGtK0pc-zad5CEgJhwMuvBuqA"/>
+</div>
+<!-- Public / Commercial Tag -->
+<span class="inline-flex items-center gap-1 bg-secondary text-on-secondary px-2 py-0.5 rounded-full text-label-sm font-label-sm shadow-sm backdrop-blur-sm">
+<span class="material-symbols-outlined text-[11px]" data-icon="storefront">storefront</span>
+                  Comércio
+                </span>
+</div>
+<!-- Bottom Content Info -->
+<div class="relative z-10 flex flex-col">
+<span class="text-label-md font-label-md text-white font-bold tracking-tight truncate drop-shadow-sm">Padaria Artesanal</span>
+<span class="text-label-sm font-label-sm text-secondary-fixed opacity-95">Há 12 min</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Personal (Friend/Family) - Unread (Emerald/Primary Ring) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm p-0.5 bg-primary hover:shadow-md transition-all active:scale-[0.98] cursor-pointer">
+<div class="w-full h-full rounded-[10px] overflow-hidden relative flex flex-col justify-between p-space-sm bg-surface-container">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Young smiling woman walking on a vibrant sunlit urban boulevard with soft background architecture, wearing casual chic attire in an authentic, natural outdoor setting with gentle emerald color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA610_cibTHiOW_kBMXQCBd_MrMWy6B-geXDpT1BvI_4zW0-bUZivOd3qfJW5M3sTlsnDBh6E8bMwje9KuF-F-njKStDGza7W4YiFfKLjOsRuqNBEoGaIL2u9d-deXFGkkkshYWI2uc7oTnrz4Lx9kBlbFX5K0-z8pMqQs1nowdeg9d5V3xwKIakEfAOq78p1y565hljbCDZGKAgSm5SHkw0KTLdZboiA6X-zKiJ8Vg038RH_BZpSF3"/>
+<!-- Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30"></div>
+<!-- Top Row -->
+<div class="relative z-10 flex items-start justify-between">
+<div class="w-8 h-8 rounded-full ring-2 ring-primary overflow-hidden bg-surface-container-lowest shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up profile avatar portrait of a vibrant smiling woman outdoors with natural light and a clean light background aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwSOhpkThxXct_Nf9eGYVLsmkX7nlLif8E1HI1HNjExVaSMUN4_fsfXMO7E87NBmS3Wc7SWXzStQxa4wZFRLHZsCU6i0SLqTV0AUldB1_UQHgy0ce758zAYyUYirQ1HXw9AGJLwf9bX7PsBOVDdApNIwjnSEaACjfoK4hZbtawQtb2oofLdJnvFJVQhmZkOPTGBIL9OdeML0q4neb9WxWg8yCSnzywus6RG3Ousiuvs8cA_EW7KUFD"/>
+</div>
+<!-- Personal Tag -->
+<span class="inline-flex items-center gap-1 bg-primary-container text-on-primary px-2 py-0.5 rounded-full text-label-sm font-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[11px]" data-icon="lock">lock</span>
+                  Pessoal
+                </span>
+</div>
+<!-- Bottom Content -->
+<div class="relative z-10 flex flex-col">
+<span class="text-label-md font-label-md text-white font-bold tracking-tight truncate drop-shadow-sm">Camila Rocha</span>
+<span class="text-label-sm font-label-sm text-primary-fixed opacity-95">Há 25 min</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Commercial (Boutique Cafe) - Unread (Cyan Ring) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm p-0.5 bg-secondary hover:shadow-md transition-all active:scale-[0.98] cursor-pointer">
+<div class="w-full h-full rounded-[10px] overflow-hidden relative flex flex-col justify-between p-space-sm bg-surface-container">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Specialty latte art coffee in a ceramic cup resting on a sleek white marble cafe table with gentle tropical plants softly blurred in the background and natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIaBN12GTRnMARwMYaqbG-3cuQd-QJB_gqs5TCrohgnTRP4qkT6h7U_-lvuEqAiejThrsVE56wbQFXQfi0Z8MMKSdSghLcf_3Pq0QC2y7_xNkQXFA2q6gb-FFwaVdx9LfVBn_EMYvUVr2Wx5iJP1fkGgxW1zLlLsURWXBGO5_NnybjdF4Ip81MzqFJNNCdAcd6jHj70ddrv4H5YNHg34zlEJWOPvH45EOcEnHU14HVXPemmg48IcG0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/30"></div>
+<div class="relative z-10 flex items-start justify-between">
+<div class="w-8 h-8 rounded-full ring-2 ring-secondary overflow-hidden bg-surface-container-lowest shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Geometric minimalist emblem of an upscale coffee house in white and deep teal tones on modern light aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmzWmyicgLTxmGnri1fz0S_3fchXzX3aaBMrqoVxfrG9d2FqQ7QQmGQYFyNk6NIHwC2h9c4x20il7HLqDfEhL2RI02ZrFseFRQIEPIcdjgGQ-iFdw-1jrpHp_XfnQVvaLE7mmFyplm_L1tzdS8yOmkpODi3ni04iXG9axjejabxQHx6BlQgZOQX3SUqSP_hmag1wOZZe2RP-xE5vggnAFzKSqEGEHD3YTbajIXfQzqKOVFiRljCDu0"/>
+</div>
+<span class="inline-flex items-center gap-1 bg-secondary text-on-secondary px-2 py-0.5 rounded-full text-label-sm font-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[11px]" data-icon="public">public</span>
+                  Público
+                </span>
+</div>
+<div class="relative z-10 flex flex-col">
+<span class="text-label-md font-label-md text-white font-bold tracking-tight truncate drop-shadow-sm">Café &amp; Bistrô Norte</span>
+<span class="text-label-sm font-label-sm text-secondary-fixed opacity-95">Há 1h</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Personal (Friend) - Unread (Emerald Ring) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm p-0.5 bg-primary hover:shadow-md transition-all active:scale-[0.98] cursor-pointer">
+<div class="w-full h-full rounded-[10px] overflow-hidden relative flex flex-col justify-between p-space-sm bg-surface-container">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Breathtaking mountain summit view at sunrise with a hiker observing distant misty ridges under a clear gradient pastel sky with soft morning warmth and emerald green peaks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnz8ZyW32eT39zUPaq1Bm_-P5ro_xof7LgMVr6flm-diUHhdpB1AtCi3BmMYZATlATIq_jg2p3bgNAVvyzgfaeFldvnVtO5TzLSu_kr8ykdDC9n2nVJMzKdc2kmCXhJrm22bRI6EdbcjwkBJbXQ02y877uBaolxvf5nbg7C8PTUDmlSwpjqxSnVMfzxLVsniSsERbjI6UMrW_MY0_MaEN7olnT4I4DzNb_yayCKcKIfquNorzamUMI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30"></div>
+<div class="relative z-10 flex items-start justify-between">
+<div class="w-8 h-8 rounded-full ring-2 ring-primary overflow-hidden bg-surface-container-lowest shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of an outdoor adventurer with hiking gear smiling warmly against scenic mountain backdrop with clean light composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7DTl_5wNmkyuA6OUaJ9s9zliHA7GdAmIQ69QGDZLBcTRRnQa1RXnUsRaGv62QE_9cHfmJgPsR2zQtQIB-a3iVbKPz1fYqW8mv3hVSl9MNRuqnFmd1iKtG6nXsjN_uEhhpQ7m2Tkr2cvybC2AtT0vy7kLA6JYUpQ5MSMIro6Pv2WenrcaOirbj1jNbzMXhGQuvyqokG_cugFFE-HCY97autTy32_DE9wDZqrCFxDo1Jesi--6afux"/>
+</div>
+<span class="inline-flex items-center gap-1 bg-primary-container text-on-primary px-2 py-0.5 rounded-full text-label-sm font-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[11px]" data-icon="people">people</span>
+                  Pessoal
+                </span>
+</div>
+<div class="relative z-10 flex flex-col">
+<span class="text-label-md font-label-md text-white font-bold tracking-tight truncate drop-shadow-sm">Lucas Silveira</span>
+<span class="text-label-sm font-label-sm text-primary-fixed opacity-95">Há 2h</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Visualized Status (Muted/Viewed State) -->
+<section class="space-y-space-md pt-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="text-label-lg font-label-lg text-on-surface-variant font-bold">Atualizações Vistas</h2>
+<span class="material-symbols-outlined text-outline" data-icon="check_circle">check_circle</span>
+</div>
+<div class="grid grid-cols-2 gap-space-md opacity-75 hover:opacity-100 transition-opacity">
+<!-- Card 5: Viewed Commercial (Muted border) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-xs p-0.5 bg-outline-variant/50 cursor-pointer">
+<div class="w-full h-full rounded-[10px] overflow-hidden relative flex flex-col justify-between p-space-sm bg-surface-container">
+<img class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" data-alt="Modern fitness studio and gym interior with sleek weights, clean mirrors, and bright airy lighting designed for high energy contemporary wellness routines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlusAcramxLxLguw6kI_dK44iMuErAl_u_DXCal6ye5rfWN7laxt5Fn88T7Qhtihp5H2TKPMqjRIUBKtwlxQkYVAyvkAPpDzfH97l3n9Z1oQkaZ0zKzrzypKSSnHlQqMAwP_fULwVlQLNL7NsJ___gEnx8HuxUhn_D7jOSzXJtVnLZPMUN6IbfT3xJoVu_vuLPTxUyqZ-Yym6ul5yRHkWdecUXmrkcLngPcuKcueydgDJIqygAffxn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/30"></div>
+<div class="relative z-10 flex items-start justify-between">
+<div class="w-8 h-8 rounded-full ring-1 ring-outline-variant overflow-hidden bg-surface-container-lowest shrink-0">
+<img class="w-full h-full object-cover" data-alt="Monochrome athletic fitness brand logo on clean slate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1pzSUsf6eWT_g4zEwOs6VplZYTQnseN43ZiQwoYKgOzx5couM5fH4m36mLbxOmQvvistQNeYLMkSaxE2RuubRrfzezjSmuEadYCfo_MfzCmdt0DBxp61HNUe04EUmC8JbVXJKcwHUXC8X7v0qokHuOuoysp5vfaUAya9zCPU2tbAesVql9UNpJIyPg6XCRJxZbhj63-IcB1Hamf25HpnVw8KzVAcHMKhMNugqSm7CjK5PU7rI-1Gf"/>
+</div>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest/80 text-on-surface px-2 py-0.5 rounded-full text-label-sm font-label-sm backdrop-blur-sm">
+<span class="material-symbols-outlined text-[11px]" data-icon="storefront">storefront</span>
+                  Comércio
+                </span>
+</div>
+<div class="relative z-10 flex flex-col">
+<span class="text-label-md font-label-md text-white font-bold tracking-tight truncate drop-shadow-sm">Fit Studio Centro</span>
+<span class="text-label-sm font-label-sm text-outline-variant">Há 6h</span>
+</div>
+</div>
+</div>
+<!-- Card 6: Viewed Personal (Muted border) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-xs p-0.5 bg-outline-variant/50 cursor-pointer">
+<div class="w-full h-full rounded-[10px] overflow-hidden relative flex flex-col justify-between p-space-sm bg-surface-container">
+<img class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" data-alt="Cozy home office desk setup with an open laptop, sketchbook, botanical houseplant, and warm ambient sunlight creating a calm productive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfc2HOSA3GvmQW2bcFqKfuemxnbVv97mtIXT3ZxaZDnJSJOCedFlE5kprWVoliIkWj0EPFCPW1E_JSlaRu2WRVTxgqpjvIY9nPMaFWu2PzkWx7LvL16S5ZNGC5zoUKRS3bpfWzSST70Kt9ZXOEE3PCn8kL1tslTWuyO_7pRFg71X3unD_plQj_VwcAJ8x332isfzRkWAczzROZTRV6V9wu4x1iLEFNaPD4L0H0XBCZYA5r9J20NSMj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30"></div>
+<div class="relative z-10 flex items-start justify-between">
+<div class="w-8 h-8 rounded-full ring-1 ring-outline-variant overflow-hidden bg-surface-container-lowest shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a creative designer smiling in an art studio environment with natural light and minimalist decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWxfj0_BiWALzzufXNEbcti5_ZOKe7O4y0_whpzE6yZx5tQit5uzNVh7JoOhrsu0fSB1e2tJvDdC7XRw53nU-ouEp7zIDQo2jotK5L_t28iEgX0C8LXdl0N-ndKNDW6PLTrjY9TbElZqRVo6sVybrNTqwamNLHrHdmZFG0609eRE1QEMW7dcXWZrOQuXiLosjU3tY_8mr8xLX-Fnndppe9hTvnkkdoRGtlEBiSgeKm5IHmSozZ4Yqa"/>
+</div>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest/80 text-on-surface px-2 py-0.5 rounded-full text-label-sm font-label-sm backdrop-blur-sm">
+<span class="material-symbols-outlined text-[11px]" data-icon="lock">lock</span>
+                  Pessoal
+                </span>
+</div>
+<div class="relative z-10 flex flex-col">
+<span class="text-label-md font-label-md text-white font-bold tracking-tight truncate drop-shadow-sm">Mariana Costa</span>
+<span class="text-label-sm font-label-sm text-outline-variant">Há 8h</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual Quick Text Floating Action Button -->
+<div class="fixed bottom-20 right-4 z-40 max-w-md mx-auto">
+<button aria-label="Criar status de texto" class="w-12 h-12 rounded-full bg-surface-container-lowest text-primary shadow-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-headline-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<!-- BottomNavBar (Shared Component JSON Blueprint Executed) -->
+<!-- Active Destination: "Status" (Strict Semantic Mapping) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-md mx-auto bg-surface-container-lowest/90 backdrop-blur-md shadow-md">
+<!-- Conversas (Inactive) -->
+<a aria-label="Conversas" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-headline-sm" data-icon="chat">chat</span>
+<span class="text-label-sm font-label-sm mt-0.5">Conversas</span>
+</a>
+<!-- Status (Active Target) -->
+<a aria-label="Status" class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-headline-sm" data-icon="motion_photos_on" style="font-variation-settings: 'FILL' 1;">motion_photos_on</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-bold">Status</span>
+</a>
+<!-- Guia Local (Inactive) -->
+<a aria-label="Guia Local" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-headline-sm" data-icon="explore">explore</span>
+<span class="text-label-sm font-label-sm mt-0.5">Guia Local</span>
+</a>
+<!-- Ajustes (Inactive) -->
+<a aria-label="Ajustes" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined text-headline-sm" data-icon="settings">settings</span>
+<span class="text-label-sm font-label-sm mt-0.5">Ajustes</span>
+</a>
+</nav>
+</div>
+</body></html>

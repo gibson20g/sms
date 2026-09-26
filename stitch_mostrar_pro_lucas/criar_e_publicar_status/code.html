@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Criar e Publicar Status</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Font: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#bdc9c6",
+            "secondary-container": "#5bb8fe",
+            "secondary-fixed": "#cce5ff",
+            "primary-fixed-dim": "#80d5cb",
+            "on-primary-container": "#a3faef",
+            "on-primary-fixed": "#00201d",
+            "tertiary": "#734700",
+            "on-primary-fixed-variant": "#00504a",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "outline": "#6e7977",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed-dim": "#93ccff",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary": "#006398",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container": "#eaedff",
+            "surface": "#faf8ff",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#006a63",
+            "on-secondary-container": "#00476e",
+            "on-surface-variant": "#3e4947",
+            "inverse-primary": "#80d5cb",
+            "surface-variant": "#dae2fd",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed": "#001d31",
+            "on-tertiary": "#ffffff",
+            "primary": "#005c55",
+            "surface-container-highest": "#dae2fd",
+            "background": "#faf8ff",
+            "on-background": "#131b2e",
+            "primary-fixed": "#9cf2e8",
+            "inverse-surface": "#283044",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "error": "#ba1a1a",
+            "surface-dim": "#d2d9f4",
+            "on-tertiary-container": "#ffe6cc",
+            "primary-container": "#0f766e",
+            "surface-bright": "#faf8ff",
+            "surface-container-low": "#f2f3ff",
+            "tertiary-container": "#945d00",
+            "on-secondary-fixed-variant": "#004b73"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen flex justify-center items-center">
+<!-- Mobile Viewport Container (Target 390px) -->
+<main class="relative w-full max-w-[390px] h-[844px] max-h-screen bg-inverse-surface overflow-hidden flex flex-col shadow-2xl rounded-none md:rounded-xl">
+<!-- Story Media Canvas / Background Image -->
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transform scale-100 transition-transform duration-700" data-alt="A stylish flat lay of artisanal ceramic tableware and cold brew coffee presented on a sun-drenched minimalist oak wood counter. High key atmospheric lighting with soft natural shadows, depicting a modern boutique cafe environment. Accents of warm terracotta and muted teal tones create an intimate, sophisticated light-mode vibe tailored for lifestyle or retail marketing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFc3vfXQ_CxEk9EuWjbGvZIKK82cT9lI70Q3EYSpdHipZjwaiMT8Ycf0VaKGHavY8cF65Dj4Cf6cvWngI6VtZuT4DcuAtfeXF15ACObULmClM9Dauhup-5pYB04vOSSjsaHaFmhRUUJlK1Arc6LLnMgz8WxmGNMsvwA7g8EAQmoVJIvbSCYlKnLJbao_rHkZRbexldN4zYBYrMbNlUtwpcdyBAux7paUHOhv6WDm1DNgnjfrGoWip3')">
+<!-- Atmospheric Gradient Overlays for Readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-inverse-surface/80 via-transparent to-inverse-surface/95 pointer-events-none"></div>
+</div>
+<!-- Top Floating Toolbar -->
+<header class="relative z-30 flex items-center justify-between px-margin pt-space-lg pb-space-sm">
+<!-- Close / Back Button (Suppresses Global Navigation per Task Mandate) -->
+<button aria-label="Fechar" class="w-10 h-10 rounded-full bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center text-inverse-on-surface hover:bg-surface-container-lowest/30 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<!-- Creative Toolset Cluster -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/20 backdrop-blur-md px-space-xs py-1 rounded-full">
+<!-- Add Text -->
+<button aria-label="Texto" class="w-9 h-9 rounded-full flex items-center justify-center text-inverse-on-surface hover:bg-surface-container-lowest/25 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">title</span>
+</button>
+<!-- Stickers / Emojis -->
+<button aria-label="Adesivos" class="w-9 h-9 rounded-full flex items-center justify-center text-inverse-on-surface hover:bg-surface-container-lowest/25 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
+</button>
+<!-- Crop / Rotate -->
+<button aria-label="Cortar" class="w-9 h-9 rounded-full flex items-center justify-center text-inverse-on-surface hover:bg-surface-container-lowest/25 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">crop</span>
+</button>
+<!-- Draw / Doodle -->
+<button aria-label="Desenhar" class="w-9 h-9 rounded-full flex items-center justify-center text-inverse-on-surface hover:bg-surface-container-lowest/25 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">draw</span>
+</button>
+</div>
+<!-- Settings / Flash / Extra Tools -->
+<button aria-label="Filtros" class="w-10 h-10 rounded-full bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center text-inverse-on-surface hover:bg-surface-container-lowest/30 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px]">auto_fix_high</span>
+</button>
+</header>
+<!-- Canvas Interactive Center (Tap to add stickers or tags) -->
+<div class="relative z-10 flex-1 flex flex-col justify-center items-center px-gutter pointer-events-none">
+<!-- Floating Interactive Tag Example -->
+<div class="pointer-events-auto bg-surface-container-lowest/90 backdrop-blur-md text-on-surface px-space-md py-1.5 rounded-full shadow-lg flex items-center gap-space-xs transform -rotate-3 hover:rotate-0 transition-transform cursor-pointer border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">local_offer</span>
+<span class="font-label-md text-label-md font-semibold text-secondary">Novo Menu Primavera</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">R$ 38,00</span>
+</div>
+</div>
+<!-- Bottom Action & Configuration Panel -->
+<section class="relative z-30 flex flex-col gap-space-md px-margin pb-space-lg pt-space-xs">
+<!-- Caption Input Row -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-space-xs pl-space-md border border-outline-variant/40 shadow-md">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">edit_note</span>
+<input class="w-full bg-transparent border-none text-on-surface font-body-md text-body-md placeholder-on-surface-variant/70 focus:outline-none focus:ring-0 p-0" placeholder="Adicionar legenda..." type="text"/>
+<!-- Location Tagger Micro Action -->
+<button aria-label="Localização" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</button>
+</div>
+<!-- Account Switcher: Origem da Postagem -->
+<div class="bg-surface-container-lowest/90 backdrop-blur-md rounded-xl p-space-xs border border-outline-variant/30 shadow-sm">
+<div class="flex items-center justify-between px-space-xs pb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Publicando como</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span> Conta Ativa
+          </span>
+</div>
+<!-- Toggle Control -->
+<div class="grid grid-cols-2 gap-1 bg-surface-container-low p-1 rounded-lg">
+<!-- Option: Comercial (Active state illustrated) -->
+<button class="flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-lowest text-secondary shadow-sm transition-all text-left font-label-md text-label-md" id="accountCommercial" onclick="selectAccount('commercial')">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<div class="truncate">
+<span class="font-bold">Café Bistrô</span>
+<span class="block text-[9px] text-on-surface-variant leading-none">Comercial</span>
+</div>
+</button>
+<!-- Option: Pessoal -->
+<button class="flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all text-left font-label-md text-label-md" id="accountPersonal" onclick="selectAccount('personal')">
+<span class="material-symbols-outlined text-[16px]">account_circle</span>
+<div class="truncate">
+<span class="font-bold">Mariana S.</span>
+<span class="block text-[9px] text-on-surface-variant leading-none">Pessoal</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Segmentação de Destino do Status (Destaque Absoluto) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-md text-label-md text-inverse-on-surface font-semibold drop-shadow-sm">Destino do Status</span>
+<span class="font-label-sm text-label-sm text-inverse-on-surface/80">Escolha o público</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- 1. Status Público / Comercial -->
+<button class="relative flex flex-col p-space-md rounded-xl text-left bg-surface-container-lowest border-2 border-secondary shadow-md transition-all active:scale-[0.98] group" id="destPublic" onclick="selectAudience('public')">
+<!-- Radio Indicator Icon -->
+<div class="flex items-center justify-between w-full mb-1">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]" id="checkPublic" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold leading-snug">Status Público</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight mt-0.5">
+              Clientes, catálogo local e busca da cidade.
+            </span>
+<!-- Highlight Badge -->
+<div class="mt-2 inline-flex items-center gap-1 self-start px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[9px]">
+<span class="material-symbols-outlined text-[10px]">store</span>
+              Alcance Máximo
+            </div>
+</button>
+<!-- 2. Status Pessoal -->
+<button class="relative flex flex-col p-space-md rounded-xl text-left bg-surface-container-lowest/80 hover:bg-surface-container-lowest border-2 border-transparent shadow-sm transition-all active:scale-[0.98] group" id="destPersonal" onclick="selectAudience('personal')">
+<!-- Radio Indicator Icon -->
+<div class="flex items-center justify-between w-full mb-1">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]" id="checkPersonal">radio_button_unchecked</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold leading-snug">Status Pessoal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight mt-0.5">
+              Apenas amigos próximos e família.
+            </span>
+<!-- Highlight Badge -->
+<div class="mt-2 inline-flex items-center gap-1 self-start px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[9px]">
+<span class="material-symbols-outlined text-[10px]">group</span>
+              Privado
+            </div>
+</button>
+</div>
+</div>
+<!-- Action Row: Save & Floating Primary 'Enviar Status' Button -->
+<div class="flex items-center justify-between pt-space-xs gap-space-md">
+<!-- Save Draft Button -->
+<button aria-label="Salvar na Galeria" class="flex items-center gap-1.5 px-space-md py-3 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-md text-label-md border border-outline-variant/30 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Salvar</span>
+</button>
+<!-- Prominent 'Enviar Status' CTA Button (Level 4 Elevation tint) -->
+<button class="flex-1 flex items-center justify-center gap-space-sm bg-secondary text-on-secondary px-space-lg py-3.5 rounded-full font-label-lg text-label-lg shadow-[0px_8px_20px_-2px_rgba(2,132,199,0.45)] hover:bg-secondary/95 active:scale-[0.96] transition-all" id="btnSend">
+<span>Enviar Status</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Interactive Logic for Account & Destination Toggles -->
+<script>
+    function selectAudience(type) {
+      const publicBtn = document.getElementById('destPublic');
+      const personalBtn = document.getElementById('destPersonal');
+      const publicCheck = document.getElementById('checkPublic');
+      const personalCheck = document.getElementById('checkPersonal');
+      const sendBtn = document.getElementById('btnSend');
+
+      if (type === 'public') {
+        publicBtn.className = "relative flex flex-col p-space-md rounded-xl text-left bg-surface-container-lowest border-2 border-secondary shadow-md transition-all active:scale-[0.98]";
+        personalBtn.className = "relative flex flex-col p-space-md rounded-xl text-left bg-surface-container-lowest/80 hover:bg-surface-container-lowest border-2 border-transparent shadow-sm transition-all active:scale-[0.98]";
+        
+        publicCheck.innerText = 'check_circle';
+        publicCheck.className = 'material-symbols-outlined text-secondary text-[20px]';
+        publicCheck.style.fontVariationSettings = "'FILL' 1";
+        
+        personalCheck.innerText = 'radio_button_unchecked';
+        personalCheck.className = 'material-symbols-outlined text-outline-variant text-[20px]';
+        personalCheck.style.fontVariationSettings = "'FILL' 0";
+
+        // Cyan / Secondary emphasis for commercial
+        sendBtn.className = "flex-1 flex items-center justify-center gap-space-sm bg-secondary text-on-secondary px-space-lg py-3.5 rounded-full font-label-lg text-label-lg shadow-[0px_8px_20px_-2px_rgba(2,132,199,0.45)] hover:bg-secondary/95 active:scale-[0.96] transition-all";
+      } else {
+        personalBtn.className = "relative flex flex-col p-space-md rounded-xl text-left bg-surface-container-lowest border-2 border-primary-container shadow-md transition-all active:scale-[0.98]";
+        publicBtn.className = "relative flex flex-col p-space-md rounded-xl text-left bg-surface-container-lowest/80 hover:bg-surface-container-lowest border-2 border-transparent shadow-sm transition-all active:scale-[0.98]";
+        
+        personalCheck.innerText = 'check_circle';
+        personalCheck.className = 'material-symbols-outlined text-primary-container text-[20px]';
+        personalCheck.style.fontVariationSettings = "'FILL' 1";
+        
+        publicCheck.innerText = 'radio_button_unchecked';
+        publicCheck.className = 'material-symbols-outlined text-outline-variant text-[20px]';
+        publicCheck.style.fontVariationSettings = "'FILL' 0";
+
+        // Emerald / Primary emphasis for personal
+        sendBtn.className = "flex-1 flex items-center justify-center gap-space-sm bg-primary-container text-on-primary px-space-lg py-3.5 rounded-full font-label-lg text-label-lg shadow-[0px_8px_20px_-2px_rgba(15,118,110,0.45)] hover:bg-primary/95 active:scale-[0.96] transition-all";
+      }
+    }
+
+    function selectAccount(accountType) {
+      const commBtn = document.getElementById('accountCommercial');
+      const persBtn = document.getElementById('accountPersonal');
+
+      if (accountType === 'commercial') {
+        commBtn.className = "flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-lowest text-secondary shadow-sm transition-all text-left font-label-md text-label-md";
+        persBtn.className = "flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all text-left font-label-md text-label-md";
+        selectAudience('public');
+      } else {
+        persBtn.className = "flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg bg-surface-container-lowest text-primary-container shadow-sm transition-all text-left font-label-md text-label-md";
+        commBtn.className = "flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all text-left font-label-md text-label-md";
+        selectAudience('personal');
+      }
+    }
+  </script>
+</body></html>

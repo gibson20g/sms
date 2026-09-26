@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conversas Pessoais - Mariana Silveira</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#dae2fd",
+            "on-primary-fixed": "#00201d",
+            "secondary": "#006398",
+            "surface-bright": "#faf8ff",
+            "primary": "#005c55",
+            "on-tertiary-container": "#ffe6cc",
+            "surface-tint": "#006a63",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#004b73",
+            "inverse-surface": "#283044",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-dim": "#d2d9f4",
+            "on-background": "#131b2e",
+            "on-secondary-fixed": "#001d31",
+            "primary-fixed-dim": "#80d5cb",
+            "surface-container-high": "#e2e7ff",
+            "tertiary": "#734700",
+            "on-tertiary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#93ccff",
+            "inverse-on-surface": "#eef0ff",
+            "on-error-container": "#93000a",
+            "secondary-container": "#5bb8fe",
+            "on-secondary-container": "#00476e",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#00504a",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "background": "#faf8ff",
+            "surface": "#faf8ff",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#3e4947",
+            "tertiary-fixed": "#ffddb8",
+            "on-surface": "#131b2e",
+            "inverse-primary": "#80d5cb",
+            "outline-variant": "#bdc9c6",
+            "on-primary-container": "#a3faef",
+            "tertiary-container": "#945d00",
+            "surface-container": "#eaedff",
+            "secondary-fixed": "#cce5ff",
+            "primary-fixed": "#9cf2e8",
+            "on-error": "#ffffff",
+            "primary-container": "#0f766e",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6e7977",
+            "tertiary-fixed-dim": "#ffb95f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+            "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "18px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #faf8ff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .status-ring-emerald {
+      box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0f766e;
+    }
+    .status-ring-muted {
+      box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #bdc9c6;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface flex justify-center min-h-screen antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Container Shell -->
+<div class="w-full max-w-md bg-surface min-h-screen flex flex-col relative pb-24 shadow-2xl">
+<!-- Top App Bar & Profile Header (Docked) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest/85 backdrop-blur-md border-b border-outline-variant/30 px-margin pt-3 pb-3 flex flex-col gap-space-sm shadow-sm transition-all duration-200">
+<!-- Topmost Row: Brand & Account Context Switcher -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<!-- Mariana Profile Avatar with Online Pill -->
+<div class="relative">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant/40 shadow-sm" data-alt="A candid, warm, natural lighting portrait of Mariana Silveira, a friendly 30-year-old woman with brown wavy hair and a genuine gentle smile, outdoors in soft golden hour light against a lush minimalist background. Photorealistic style, warm color tones, soft teal highlights, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ffPMIh-N76AQvY4SHdSoNgQ2-r_i536UF8Ej20Luen5wGhWgyHwXoKtiVmZN6yF-vq4lqiB54UytSQFd7Gca-s_ksFVVGNtdnOlBKVvpcaANAgLchqzij7g5fkRo4iSOc9PLCA9H6lWshf5IfDgOF_tq-OE9YDp1cwcu7PBuwvvs4s-JSqNy9d8Ox6nL0Yez8b23jeWl481SuBD7pwq0zV_J1YVMcfCbiTA8ERidG3Bwd3CYvK-x"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary-container rounded-full border-2 border-surface-container-lowest" title="Disponível"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-label-lg font-label-lg text-on-surface font-bold tracking-tight">Mariana Silveira</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-container/10 text-primary-container font-semibold">
+                Pessoal
+              </span>
+</div>
+<p class="text-body-sm font-body-sm text-outline">mariana.silveira@dialogo.br</p>
+</div>
+</div>
+<!-- Quick Switcher to Business Profile ('Café Bistrô') & Local Guide -->
+<div class="flex items-center gap-1.5">
+<button class="group flex items-center gap-1 px-2.5 py-1.5 bg-surface-container hover:bg-surface-container-high rounded-full border border-outline-variant/30 text-on-surface-variant transition-colors duration-150 active:scale-95" title="Alternar para Café Bistrô">
+<span class="material-symbols-outlined text-secondary" style="font-size: 18px;">storefront</span>
+<span class="text-label-sm font-label-sm font-bold text-secondary">Bistrô</span>
+<span class="material-symbols-outlined text-outline" style="font-size: 16px;">swap_horiz</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors duration-150 active:scale-95" title="Guia Local">
+<span class="material-symbols-outlined" style="font-size: 20px;">map</span>
+</button>
+</div>
+</div>
+<!-- Second Row: App Title & Action Cluster -->
+<div class="flex items-center justify-between mt-1">
+<h1 class="text-headline-md font-headline-md text-on-surface font-extrabold tracking-tight">
+          Mensagens
+        </h1>
+<div class="flex items-center gap-1">
+<button aria-label="Pesquisar mensagens" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 22px;">search</span>
+</button>
+<button aria-label="Ajustes pessoais" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 22px;">tune</span>
+</button>
+</div>
+</div>
+<!-- Quick Search Bar Embedded -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined" style="font-size: 18px;">search</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant/30 rounded-xl text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest transition-all" placeholder="Pesquisar conversas e contatos pessoais..." type="text"/>
+</div>
+<!-- Category Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pt-1 pb-0.5">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md font-label-md shadow-sm whitespace-nowrap active:scale-95 transition-transform">
+          Todas
+        </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant text-label-md font-label-md border border-outline-variant/30 whitespace-nowrap active:scale-95 transition-transform">
+          Família
+        </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant text-label-md font-label-md border border-outline-variant/30 whitespace-nowrap active:scale-95 transition-transform">
+          Amigos
+        </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant text-label-md font-label-md border border-outline-variant/30 whitespace-nowrap active:scale-95 transition-transform">
+          Grupos
+        </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant text-label-md font-label-md border border-outline-variant/30 whitespace-nowrap active:scale-95 transition-transform flex items-center gap-1.5">
+<span>Não Lidas</span>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-margin flex flex-col gap-space-lg pt-3">
+<!-- Status / Stories Section (Personal Contacts Only) -->
+<section class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-outline tracking-wider uppercase">Momentos dos Amigos</span>
+<span class="text-label-sm font-label-sm text-primary font-bold">Ver todos</span>
+</div>
+<div class="flex items-center gap-3.5 overflow-x-auto hide-scrollbar py-1">
+<!-- Mariana's Own Status Update Button -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border-2 border-surface-container-lowest shadow-sm" data-alt="A close portrait of Mariana Silveira smiling gently in soft daylight, cozy modern urban setting with gentle focus, warm atmosphere, elegant styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQZD69rp3ql10IS0BcjVmThN3fmrvxYEQrgPTXeh2eLn-y22F0w1AscXqaMNf-xU-Y7QXw3dbsY9Z0qEMzlTHpIKQBsgoP6Ung-S-Ncet6Na3GQDRTclHNiMJdfBW6iKG38_nhRMMFg5iqLHCwEWhOUb31Q6slBU07RdGkqG9mnxGjndCJxmptVqgqkMpMVk3Vdi9l2GYpniYWpKAtWHmAkPaM59pet5Ixzs6NND3lj70VV6s-08Ko"/>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-primary-container text-on-primary rounded-full flex items-center justify-center border-2 border-surface-container-lowest group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 14px;">add</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface font-medium">Meu Status</span>
+</div>
+<!-- Contact Story: Pai -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 status-ring-emerald transition-transform group-hover:scale-105">
+<img class="w-full h-full rounded-full object-cover" data-alt="An affectionate candid portrait of an elderly Brazilian father with gray hair and kind eyes, relaxing in a green sunlit veranda garden, natural daylight, warm realistic photograph, peaceful and loving mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDACu3f37FDpocC5hwtQgwdl2jBMoqdx7CSJgADK9ri2-VtnSAzsNS3cH9czNfl73wY8fU3JudYxQH4tRw1w3QQDjOVKnymaUfn71kGrhwPzx0stX2K16S1skZBAV9aGf27hq5c_hrP_BBA6lMeK7LTMZbD1_g8MhZn9VLpatYatnv9ZevTe9JjzZPzPhLNBHKHqTyIqFmAqHiTKCa0wq96zopaUGqt_T-hxPaX916a-IlR1TLIaCYC"/>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">Pai</span>
+</div>
+<!-- Contact Story: Beatriz Vasconcelos -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 status-ring-emerald transition-transform group-hover:scale-105">
+<img class="w-full h-full rounded-full object-cover" data-alt="A portrait of Beatriz, an energetic young woman with curly hair wearing sporty casual clothes in an airy outdoor park setting with lush trees, golden hour sunset glow, modern clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa4s5CJqGqCWb2-qjPYF0OhsJMo1qKdQ06L4lQYWk8o5Fls5NgLxKNjofwB7KkOArUDkZW4g5ULNuoQ1E24kFLxrHsq4eCEIf9f0R3rsm40t7w9wrZnSiA2PRdVrBNYMKuFpLDFZux-CqnIu9OLwUFhL46Xp9MBUJzP47mBYyqg4MPfvf_50qkZyuP6umaz23cwxQT6ZYfYNIeB0evSE1zdlDuSLz9bI08-JV-ATi5SC5N2PHOJf45"/>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">Beatriz V.</span>
+</div>
+<!-- Contact Story: Lucas (Irmão) -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 status-ring-muted transition-transform group-hover:scale-105">
+<img class="w-full h-full rounded-full object-cover" data-alt="A cheerful young man in his late 20s smiling with coffee mug on a balcony overlooking a city skyline, natural morning sunlight, clean relaxed lifestyle photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPNkToXKKDUuyGcNFD_3TYXtoNr4_AYs_jDROjjjhgbW96R8wxfXAPN0ynE9Xjnp3E2rt1T3QpvZgM-lyxOUFPvPsh_2-BguJgK03s3kqGN2kdn8CbRaUf6SK856Kwd0JY3imum5Fy-pcfyrXiseDTUuVVxGTqTVhqkI8P_VOcy1XSwUraiamjCBoOkJQFbLliGykg7k0gyXq1C1DbiNRzbeHWRiLKI66qvnxBeRl_YU76aFVhmO62"/>
+</div>
+<span class="text-label-sm font-label-sm text-outline font-normal">Lucas</span>
+</div>
+<!-- Contact Story: Camila Corrida -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 status-ring-muted transition-transform group-hover:scale-105">
+<img class="w-full h-full rounded-full object-cover" data-alt="A young athletic female runner stretching beside a running track early in the morning with morning dew and fresh sunbeams, dynamic energetic clean mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3UGZ7ll9L6ADRWBw4tcBVmBJ8WJvCwlIlwfls-LUETjQzvk0iI7XYTsVhbc8RsDV6bz6i3tNhCywNJ_BSXR9nwNFSr1g9Oe5L0ewMV-mshYUtZB0Q77E407c94ZhLUYn33atSv31G5to50dWhinaEg99cFT6iNqT-eZArW453fAoXr6sI-xHRi_IgSWfPIxZag84MqO54Hm-CgMcYVXcdqZQL9bfVDJI9zMe_Ey15haff0vPn6KdW"/>
+</div>
+<span class="text-label-sm font-label-sm text-outline font-normal">Camila</span>
+</div>
+</div>
+</section>
+<!-- Personal Conversations Feed (Bento-style clean cards) -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between pb-1">
+<span class="text-label-md font-label-md text-outline tracking-wider uppercase">Conversas Recentes</span>
+<div class="flex items-center gap-1 text-primary-container text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined" style="font-size: 16px;">lock</span>
+<span>Criptografia Pessoal</span>
+</div>
+</div>
+<!-- Chat Item 1: Pai -->
+<article class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 flex items-center justify-between gap-3 shadow-sm hover:border-primary-container/40 transition-all cursor-pointer active:scale-[0.99]">
+<div class="relative shrink-0">
+<img class="w-13 h-13 w-12 h-12 rounded-full object-cover border border-outline-variant/20" data-alt="An affectionate candid portrait of an elderly Brazilian father with gray hair and kind eyes, relaxing in a green sunlit veranda garden, natural daylight, warm realistic photograph, peaceful and loving mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArA6rHrUZhuoRXqc5dGvZjh6eFb-EsBaxbYLphrHpWC89nT5WNsq4zqKEd47x7NmrBXYJr2MhYf6pe8uL97YntTQcW80V9UtIniuumIcnt1vNWvL7C2R2yylmuF_BO_Hu6xIYGKD6YmzQIsCUPNpQhbki0e8huMrtsnv8DtDh9PYSudtH2pUbUyz08nFzAKVQTxg3deEa3J-Knn6QVHjd16UzyYjm53KudndLfvE6jgSSW5echBY_x"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary-container rounded-full border-2 border-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="text-body-lg font-headline-sm font-bold text-on-surface truncate">Pai</h2>
+<span class="text-label-sm font-label-sm text-outline whitespace-nowrap">09:42</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<!-- Double Blue Checkmark (Cyan glowing per design tokens) -->
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px; font-variation-settings: 'FILL' 1;">done_all</span>
+<p class="text-body-md font-body-md text-on-surface-variant truncate">
+                Foto recebida. Tudo bem por aqui também...
+              </p>
+</div>
+</div>
+</article>
+<!-- Chat Item 2: Grupo Família Silveira -->
+<article class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 flex items-center justify-between gap-3 shadow-sm hover:border-primary-container/40 transition-all cursor-pointer active:scale-[0.99]">
+<!-- Overlapping Group Avatars -->
+<div class="relative shrink-0 w-12 h-12">
+<div class="w-9 h-9 rounded-full overflow-hidden absolute top-0 left-0 border-2 border-surface-container-lowest z-10 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A portrait of a warm smiling middle-aged Brazilian mother with gentle eyes, indoor natural morning light, homely and affectionate feeling, photorealistic warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAH7k2uPWp7k_lVxkrfNRyKWahzqptuV46QO9aE4ADCVBnnnlijDriPT86fILo4hcvVqT2OzNg9EUim56R0GWZ1peOhu7q9PSRv1j8tzRqL4T4AmLkqWX_Fs7FOMQE3z7R2r10odTJO26IYRb6XUQxLD0031xx9B0ZR5K8uhHvrW8QC6B63sH-VP4WhjvVoP_tkQWI1HX6P144_2W1t2hPmeMym6zNjgu-c3BeDvJFKtgR8E2STCjx"/>
+</div>
+<div class="w-9 h-9 rounded-full overflow-hidden absolute bottom-0 right-0 border-2 border-surface-container-lowest z-20 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A portrait of an elderly Brazilian father with gray hair and kind eyes, relaxing in a green sunlit veranda garden, natural daylight, warm realistic photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSZia7tS9kuoB3L5jPTDOrvnctZzLxtVR72CuavJvSlGhdfns2Pg9TirFhM2Pz3HWVnKwAzKeV2hfsT8Gnrp_EK_QCB0hR_zpgBX1yy07Z5L1pnEQBkLoMrPNHG9Vu7pg4r3cAxbTMDQdMXo8W778BM75lV82Mse1ektFbgpM46Kx1DpLYyGm5j6tcn2GA_UBGPqdujq8hRnfREeblmrFDxKOEWOnWqKXXPf5g-WAUQt_YHWC08Ixv"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 truncate">
+<h2 class="text-body-lg font-headline-sm font-bold text-on-surface truncate">Família Silveira</h2>
+<span class="material-symbols-outlined text-outline shrink-0" style="font-size: 16px;">diversity_3</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary-container font-bold whitespace-nowrap">Ontem</span>
+</div>
+<div class="flex items-center justify-between mt-0.5">
+<p class="text-body-md font-body-md text-on-surface truncate">
+<span class="font-semibold text-primary">Mãe:</span> Vamos fazer a lasanha pro almoço de domingo!
+              </p>
+<span class="ml-2 w-5 h-5 rounded-full bg-primary-container text-on-primary text-label-sm font-label-sm flex items-center justify-center shrink-0">
+                3
+              </span>
+</div>
+</div>
+</article>
+<!-- Chat Item 3: Beatriz Vasconcelos -->
+<article class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 flex items-center justify-between gap-3 shadow-sm hover:border-primary-container/40 transition-all cursor-pointer active:scale-[0.99]">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant/20" data-alt="A portrait of Beatriz, an energetic young woman with curly hair wearing sporty casual clothes in an airy outdoor park setting with lush trees, golden hour sunset glow, modern clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0J2CmGCqLXR7Rr6C1cpgOHASgRneJXqbienhEjZANYUNPlRQlyV5OTGFdcT-zylqps9FnW5vYqW7HwrHWNaq5aQETtadXK2aNhVdOXOO2pjCuYafpWmhCf5osE16U4muIzPWQOKAZv3-ngtjn28Wnz_JGSoATtD8KKn26PqZjOxiMRJZwE93To3oNoph66unQ0N3G8I6L3N7XFxfppl1e4yREda0Jg8NtK01p-pD98klayMteuSec"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-outline-variant rounded-full border-2 border-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="text-body-lg font-headline-sm font-bold text-on-surface truncate">Beatriz Vasconcelos</h2>
+<span class="text-label-sm font-label-sm text-outline whitespace-nowrap">Ontem</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-outline" style="font-size: 16px;">check</span>
+<p class="text-body-md font-body-md text-on-surface-variant truncate">
+                Combinado! Nos encontramos às 18h no parque
+              </p>
+</div>
+</div>
+</article>
+<!-- Chat Item 4: Grupo Amigos da Corrida / Treino -->
+<article class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 flex items-center justify-between gap-3 shadow-sm hover:border-primary-container/40 transition-all cursor-pointer active:scale-[0.99]">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary shrink-0 border border-secondary-container/40">
+<span class="material-symbols-outlined" style="font-size: 26px;">directions_run</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 truncate">
+<h2 class="text-body-lg font-headline-sm font-bold text-on-surface truncate">Amigos da Corrida / Treino</h2>
+</div>
+<span class="text-label-sm font-label-sm text-outline whitespace-nowrap">Segunda</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px;">near_me</span>
+<p class="text-body-md font-body-md text-on-surface-variant truncate">
+                Carlos compartilhou o percurso: Circuito Parque da Cidade (8.5 km)
+              </p>
+</div>
+</div>
+</article>
+<!-- Chat Item 5: Mensagens Salvas / Bloco de Notas Pessoal -->
+<article class="p-3.5 bg-surface-container-lowest rounded-2xl border border-primary/20 flex items-center justify-between gap-3 shadow-sm hover:border-primary-container/60 transition-all cursor-pointer active:scale-[0.99]">
+<div class="w-12 h-12 rounded-2xl bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0 border border-primary-container/20">
+<span class="material-symbols-outlined" style="font-size: 24px; font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<h2 class="text-body-lg font-headline-sm font-bold text-on-surface truncate">Mensagens Salvas</h2>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-label-sm font-label-sm text-outline">Notas</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline whitespace-nowrap">Fixo</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 16px;">push_pin</span>
+<p class="text-body-md font-body-md text-on-surface-variant truncate">
+                Lista de compras da feira, ideias de receitas e lembrete do dentista.
+              </p>
+</div>
+</div>
+</article>
+</section>
+<!-- Intimate Status Micro-Banner -->
+<section class="mt-1 p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/15 flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined" style="font-size: 18px;">favorite</span>
+</div>
+<div class="flex-1">
+<p class="text-label-md font-label-md text-on-surface">Espaço Pessoal Mariana</p>
+<p class="text-body-sm font-body-sm text-outline">Apenas suas conversas privadas e contatos íntimos aparecem aqui.</p>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Floating Action Button) for Personal Chat -->
+<button aria-label="Nova conversa pessoal" class="fixed bottom-20 right-6 z-40 w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg active:scale-90 transition-transform duration-150 group" style="box-shadow: 0px 8px 16px -2px rgba(15, 118, 110, 0.35);">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform duration-200" style="font-size: 26px;">edit_square</span>
+</button>
+<!-- Bottom Navigation Bar (Semantic Shell from JSON) -->
+<!-- JSON: label_texts: ["Conversas", "Status", "Guia Local", "Ajustes"], icons: ["chat", "motion_photos_on", "explore", "settings"] -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-space-xs max-w-md mx-auto bg-surface-container-lowest/90 backdrop-blur-md border-t border-outline-variant/30 shadow-md">
+<!-- Conversas (Active: matches current screen intent) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-size: 22px; font-variation-settings: 'FILL' 1;">chat</span>
+<span class="text-label-sm font-label-sm">Conversas</span>
+</button>
+<!-- Status -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90">
+<span class="material-symbols-outlined" style="font-size: 22px;">motion_photos_on</span>
+<span class="text-label-sm font-label-sm">Status</span>
+</button>
+<!-- Guia Local -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90">
+<span class="material-symbols-outlined" style="font-size: 22px;">explore</span>
+<span class="text-label-sm font-label-sm">Guia Local</span>
+</button>
+<!-- Ajustes -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-primary transition-colors duration-150 active:scale-90">
+<span class="material-symbols-outlined" style="font-size: 22px;">settings</span>
+<span class="text-label-sm font-label-sm">Ajustes</span>
+</button>
+</nav>
+</div>
+</body></html>
