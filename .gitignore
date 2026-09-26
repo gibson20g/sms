@@ -1,3 +1,23 @@
+# Ambientes virtuais Python
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configurações e Variáveis de Ambiente locais
+.env
+.env.local
+
+# Builds Flet / Flutter / Android
+build/
+dist/
+*.apk
+*.aab
+*.ipa
+
+# Editores e SO
 .DS_Store
 Thumbs.db
 *.log
